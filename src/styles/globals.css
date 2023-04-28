@@ -1,0 +1,23 @@
+@import url('../assets/fonts/gilroy/stylesheet.css');
+:root {
+  --black: #000;
+  --white-grey: #f2f3f7;
+  --light-grey: #d6d5d5;
+  --text-grey: #e1e2e1;
+  --light-green: #7dffb1;
+  --dark-green: #346849;
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+body {
+  font-family: 'Gilroy', sans-serif;
+}

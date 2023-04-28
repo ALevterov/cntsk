@@ -1,0 +1,13 @@
+.section {
+  padding-top: 80px;
+  position: relative;
+  background-color: var(--black);
+  height: 100vh;
+}
+
+.centralContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100vh - 253px);
+}

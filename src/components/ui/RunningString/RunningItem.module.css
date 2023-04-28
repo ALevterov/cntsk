@@ -1,0 +1,25 @@
+.item {
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 96.3%;
+  text-transform: uppercase;
+
+  color: #ffffff;
+
+  padding: 0 14px;
+  position: relative;
+  white-space: nowrap;
+}
+
+.item::after {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 2px;
+  height: 20px;
+  background-color: #fff;
+  right: 0;
+  top: calc(50% - 10px);
+}

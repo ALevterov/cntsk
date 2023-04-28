@@ -1,0 +1,18 @@
+.text {
+  /* font-family: 'Pais'; */
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  color: #5c5c5c;
+  width: 548px;
+}
+.text > strong {
+  font-weight: 700;
+}
+.text > p {
+  margin-bottom: 20px;
+}
+.text > p:last-child {
+  margin-bottom: 0;
+}

@@ -1,0 +1,44 @@
+.container {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  left: 0;
+  right: 0;
+  margin-top: 37px;
+}
+.wrapper {
+  padding: 37px 0;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.inner,
+.innerClone {
+  transform: translate(100%, 0);
+  /* width: 100%; */
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* overflow: hidden; */
+}
+.inner {
+  animation: marquee 12s infinite linear forwards;
+  position: absolute;
+  /* right: 0; */
+}
+.innerClone {
+  animation: 12s marquee 6s infinite linear forwards;
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
