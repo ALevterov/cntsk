@@ -7,10 +7,40 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 
 .cardsContainer {
   display: flex;
   flex-direction: column;
   gap: 30px;
+}
+.vertical {
+  transform: rotate(180deg);
+  position: absolute;
+  top: 0;
+  left: calc(50% - 183px);
+  overflow: hidden;
+  height: 100vh;
+  writing-mode: vertical-lr;
+}
+
+.mainText {
+  font-family: 'Gilroy';
+  font-style: italic;
+  font-weight: 1000;
+  font-size: 296.122px;
+  line-height: 110%;
+  color: transparent;
+  background: linear-gradient(to left, #248c4e, #acffe1);
+  color: #dad9d9;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-stroke: 4px transparent;
+  writing-mode: vertical-rl;
+
+  margin-left: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

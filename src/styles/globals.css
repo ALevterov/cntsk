@@ -21,3 +21,44 @@ body {
 body {
   font-family: 'Gilroy', sans-serif;
 }
+
+span.swiper-pagination-bullet {
+  width: 22px;
+  height: 4px;
+
+  background: var(--light-green);
+  opacity: 1;
+  border-radius: 63px;
+}
+span.swiper-pagination-bullet-active {
+  width: 56px;
+  height: 4px;
+
+  background: #ffffff;
+  border-radius: 63px;
+}
+div.swiper-slide {
+  background-color: #248c4e;
+  overflow: hidden;
+}
+.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: 43px;
+  text-align: left;
+  padding-left: 80px;
+}
+div.swiper-button-prev {
+  display: none;
+}
+div.swiper-button-next {
+  bottom: 34px;
+  right: 140px;
+  top: unset;
+}
+
+.slider-next-btn {
+  position: absolute;
+  bottom: 33px;
+  right: 140px;
+  z-index: 999;
+  cursor: pointer;
+}

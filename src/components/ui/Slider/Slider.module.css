@@ -1,0 +1,35 @@
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  background-color: #248c4e;
+  position: relative;
+}
+.sliderInner {
+  padding: 67px 140px 113px 80px;
+}
+.slideBgIndex {
+  font-style: italic;
+  font-weight: 1000;
+  font-size: 769px;
+  /* line-height: 40px; */
+  line-height: 500px;
+
+  color: #228248;
+  position: absolute;
+  left: -100px;
+  top: 0;
+  z-index: 9;
+}
+.slideText {
+  position: relative;
+  z-index: 10;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 40px;
+
+  color: #ffffff;
+}

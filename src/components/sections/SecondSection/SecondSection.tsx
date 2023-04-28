@@ -1,11 +1,12 @@
 import global from '@/styles/global.module.css'
 import styles from './SecondSection.module.css'
-import MainTextText from '@/components/ui/SecondSection/MainText/MainTextSecond'
+import MainText from '@/components/ui/SecondSection/MainText/MainTextSecond'
 import img1 from '@/assets/secondSection/1.png'
 import img2 from '@/assets/secondSection/2.png'
 import img3 from '@/assets/secondSection/3.png'
 import img4 from '@/assets/secondSection/4.png'
 import CardAdvantages from '@/components/ui/SecondSection/CardAdvantages/CardAdvantages'
+import RunningStringSecond from '@/components/ui/RunningStringSecond/RunningStringSecond'
 
 type TCard = { img: string; text: string }
 
@@ -32,7 +33,11 @@ const SectionSection = () => {
   return (
     <div className={styles.section}>
       <div className={[global.container, styles.container].join(' ')}>
-        <MainTextText>
+        <div className={styles.vertical}>
+          <h1 className={styles.mainText}>ЦНТСК</h1>
+          <RunningStringSecond />
+        </div>
+        <MainText>
           <p>
             <strong>
               ЦНТСК - это коммуникационное агентство нового поколения,{' '}
@@ -53,7 +58,7 @@ const SectionSection = () => {
               философию работы в области коммуникаций.
             </strong>
           </p>
-        </MainTextText>
+        </MainText>
         <div className={styles.cardsContainer}>
           {cards.map(card => (
             <CardAdvantages text={card.text} img={card.img} key={card.text} />

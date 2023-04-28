@@ -1,0 +1,36 @@
+.section {
+  padding-left: 140px;
+  padding-bottom: 71px;
+
+  background-color: #fff;
+}
+.containerTop {
+  display: flex;
+  align-items: center;
+  gap: 130px;
+
+  margin-bottom: 120px;
+}
+.containerBottom {
+  padding-right: 140px;
+}
+.bordered {
+  color: transparent;
+  background: linear-gradient(to bottom, #248c4e, #acffe1);
+  color: #fff;
+  -webkit-text-stroke: 3px transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.bottomText {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 44px;
+  line-height: 50px;
+
+  color: #000000;
+}
+.slider {
+  width: 1020px;
+  height: 500px;
+}
