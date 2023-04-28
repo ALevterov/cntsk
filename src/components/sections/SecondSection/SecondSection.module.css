@@ -1,5 +1,6 @@
 .section {
   height: 100vh;
+  background: linear-gradient(to right, #dddddd, #d6d5d5);
 }
 .container {
   height: 100%;
