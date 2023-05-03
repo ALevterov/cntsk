@@ -23,6 +23,12 @@
   align-items: center;
   /* overflow: hidden; */
 }
+/* .innerClone {
+  transform: translate(100%, 0);
+} */
+/* .innerСlone {
+  transform: translate(120%, 0);
+} */
 .inner {
   animation: marquee 12s infinite linear forwards;
   position: absolute;

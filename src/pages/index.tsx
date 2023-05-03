@@ -13,6 +13,7 @@ import {
 import MenuButton from '@/components/ui/MenuButton/MenuButton'
 import Menu from '@/components/ui/Menu/Menu'
 import menuStyles from '@/components/sections/FirstSection/FirstSection.module.css'
+import VideoSection from '@/components/sections/VideoSection/VideoSection'
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false)
   const toggleMenu = useCallback(() => {
@@ -47,6 +48,7 @@ export default function Home() {
       <div className={styles.contentContainer} ref={sectionRef}>
         <SectionSection />
         <TodaySection />
+        <VideoSection />
       </div>
     </>
   )

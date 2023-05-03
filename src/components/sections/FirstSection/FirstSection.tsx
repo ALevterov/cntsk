@@ -6,7 +6,12 @@ import MainText from '@/components/ui/FirstSection/MainText/MainText'
 import MainTextBordered from '@/components/ui/FirstSection/MainText/MainTextBordered'
 import AdditionalText from '@/components/ui/FirstSection/AdditionalText/AdditionalText'
 import { useEffect, useRef, useState } from 'react'
-
+const items: string[] = [
+  'инновационные подходы коммуникации и PR',
+  'инновационные подходы коммуникации и PR',
+  'инновационные подходы коммуникации и PR',
+  'инновационные подходы коммуникации и PR',
+]
 const FirstSection = () => {
   const [scrollPos, setScrollPos] = useState(0)
   const sectionRef = useRef<HTMLDivElement | null>(null)
@@ -41,7 +46,7 @@ const FirstSection = () => {
           </>
         </MainText>
       </div>
-      <RunningString />
+      <RunningString items={items} />
     </div>
   )
 }
