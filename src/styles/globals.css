@@ -5,8 +5,11 @@
   --light-grey: #d6d5d5;
   --text-grey: #e1e2e1;
   --light-green: #7dffb1;
+  --medium-green: #248c4e;
   --dark-green: #346849;
+  --menu-z-index: 5;
 }
+
 * {
   box-sizing: border-box;
   padding: 0;

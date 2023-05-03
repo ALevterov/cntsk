@@ -1,8 +1,10 @@
 .section {
   padding-top: 80px;
-  position: relative;
   background-color: var(--black);
   height: 100vh;
+  position: fixed;
+  top: 0;
+  z-index: 4;
 }
 
 .centralContainer {
@@ -10,4 +12,17 @@
   flex-direction: column;
   justify-content: space-between;
   height: calc(100vh - 253px);
+}
+
+.menuIcon {
+  position: fixed;
+  top: 0;
+  left: calc(50% - 97.5px);
+  transform: translateY(0);
+  transition: 0.3s transform;
+  will-change: transform;
+  z-index: 6;
+}
+.menuIcon.opened {
+  transform: translateY(379px);
 }

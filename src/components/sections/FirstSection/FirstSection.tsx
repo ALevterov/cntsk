@@ -5,9 +5,22 @@ import RunningString from '@/components/ui/RunningString/RunningString'
 import MainText from '@/components/ui/FirstSection/MainText/MainText'
 import MainTextBordered from '@/components/ui/FirstSection/MainText/MainTextBordered'
 import AdditionalText from '@/components/ui/FirstSection/AdditionalText/AdditionalText'
+import { useEffect, useRef, useState } from 'react'
+
 const FirstSection = () => {
+  const [scrollPos, setScrollPos] = useState(0)
+  const sectionRef = useRef<HTMLDivElement | null>(null)
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      if (sectionRef.current) {
+        sectionRef.current.style.transform = `translateY(${
+          window.scrollY * -1
+        }px)`
+      }
+    })
+  }, [])
   return (
-    <div className={styles.section}>
+    <div className={styles.section} ref={sectionRef}>
       <Header />
       <div className={[global.container, styles.centralContainer].join(' ')}>
         <div

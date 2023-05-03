@@ -1,0 +1,9 @@
+.colored {
+  cursor: pointer;
+}
+.colored:hover path {
+  transition: fill 0.3s ease;
+}
+.colored:hover path {
+  fill: var(--light-green);
+}

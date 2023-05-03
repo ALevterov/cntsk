@@ -1,0 +1,25 @@
+.btn {
+  position: relative;
+  cursor: pointer;
+}
+.btn svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 195px;
+  height: 55px;
+}
+.btn span {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 96.3%;
+  color: #ffffff;
+  z-index: 2;
+}

@@ -1,0 +1,24 @@
+.btn {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+
+  /* identical to box height */
+  text-transform: uppercase;
+
+  color: #ffffff;
+  background-color: transparent;
+
+  border: 1px solid #ffffff;
+  border-radius: 20px;
+
+  transition: all 0.3s ease;
+  cursor: pointer;
+  padding: 20px 60px;
+}
+.btn:hover {
+  background-color: #fff;
+  color: #248c4e;
+  /* border: 1px solid #248c4e; */
+}
