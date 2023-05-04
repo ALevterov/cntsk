@@ -1,10 +1,8 @@
-import Image from 'next/image'
 import styles from './VideoSection.module.css'
 import img1 from '../../../assets/VideoSection/1.png'
 import img2 from '../../../assets/VideoSection/2.png'
 import img3 from '../../../assets/VideoSection/3.png'
-import RunningString from '@/components/ui/RunningString/RunningString'
-
+import RunningString from '@/components/ui/Common/RunningString/RunningString'
 const items: string[] = [
   'Информация. Доверие. Результаты',
   'Информация. Доверие. Результаты',

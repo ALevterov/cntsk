@@ -1,0 +1,14 @@
+.h1 {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 44px;
+  line-height: 30px;
+
+  /* identical to box height, or 68% */
+  text-align: center;
+
+  color: #000000;
+}
+.title {
+  margin-bottom: 100px;
+}

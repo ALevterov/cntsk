@@ -1,0 +1,42 @@
+.section {
+  padding-top: 100px;
+  padding-bottom: 170px;
+}
+.cardsWrapper {
+  display: flex;
+  gap: 50px;
+  flex-direction: column;
+}
+
+.cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.card1 {
+  height: 293px;
+}
+.card2 {
+  height: 236px;
+}
+.card3 {
+  height: 197px;
+}
+.card4 {
+  height: 215px;
+}
+.card5 {
+  height: 274px;
+}
+.card6 {
+  height: 0px;
+}
+.card7 {
+  height: 176px;
+}
+.card8 {
+  height: 0px;
+}

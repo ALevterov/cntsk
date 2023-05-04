@@ -1,11 +1,11 @@
 import global from '@/styles/global.module.css'
-import Header from '../../ui/Header/Header'
 import styles from './FirstSection.module.css'
-import RunningString from '@/components/ui/RunningString/RunningString'
-import MainText from '@/components/ui/FirstSection/MainText/MainText'
-import MainTextBordered from '@/components/ui/FirstSection/MainText/MainTextBordered'
-import AdditionalText from '@/components/ui/FirstSection/AdditionalText/AdditionalText'
 import { useEffect, useRef, useState } from 'react'
+import Header from '@/components/ui/Common/Header/Header'
+import AdditionalText from '@/components/ui/Sections/FirstSection/AdditionalText/AdditionalText'
+import MainText from '@/components/ui/Sections/FirstSection/MainText/MainText'
+import MainTextBordered from '@/components/ui/Sections/FirstSection/MainText/MainTextBordered'
+import RunningString from '@/components/ui/Common/RunningString/RunningString'
 const items: string[] = [
   'инновационные подходы коммуникации и PR',
   'инновационные подходы коммуникации и PR',

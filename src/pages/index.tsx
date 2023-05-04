@@ -2,18 +2,12 @@ import styles from '@/styles/Home.module.css'
 import FirstSection from '@/components/sections/FirstSection/FirstSection'
 import SectionSection from '@/components/sections/SecondSection/SecondSection'
 import TodaySection from '@/components/sections/TodaySection/TodaySection'
-import {
-  RefObject,
-  useCallback,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from 'react'
-import MenuButton from '@/components/ui/MenuButton/MenuButton'
-import Menu from '@/components/ui/Menu/Menu'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import menuStyles from '@/components/sections/FirstSection/FirstSection.module.css'
 import VideoSection from '@/components/sections/VideoSection/VideoSection'
+import PossibilitiesSection from '@/components/sections/PossibilitiesSection/PossibilitiesSection'
+import MenuButton from '@/components/ui/Common/MenuButton/MenuButton'
+import Menu from '@/components/ui/Common/Menu/Menu'
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false)
   const toggleMenu = useCallback(() => {
@@ -49,6 +43,7 @@ export default function Home() {
         <SectionSection />
         <TodaySection />
         <VideoSection />
+        <PossibilitiesSection />
       </div>
     </>
   )

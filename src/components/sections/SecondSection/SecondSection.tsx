@@ -1,12 +1,15 @@
 import global from '@/styles/global.module.css'
 import styles from './SecondSection.module.css'
-import MainText from '@/components/ui/SecondSection/MainText/MainTextSecond'
+// import MainText from '@/components/ui/SecondSection/MainText/MainTextSecond'
 import img1 from '@/assets/secondSection/1.png'
 import img2 from '@/assets/secondSection/2.png'
 import img3 from '@/assets/secondSection/3.png'
 import img4 from '@/assets/secondSection/4.png'
-import CardAdvantages from '@/components/ui/SecondSection/CardAdvantages/CardAdvantages'
-import RunningStringSecond from '@/components/ui/RunningStringSecond/RunningStringSecond'
+import RunningStringSecond from '@/components/ui/Common/RunningStringSecond/RunningStringSecond'
+import MainText from '@/components/ui/Sections/SecondSection/MainText/MainTextSecond'
+import CardAdvantages from '@/components/ui/Sections/SecondSection/CardAdvantages/CardAdvantages'
+// import CardAdvantages from '@/components/ui/SecondSection/CardAdvantages/CardAdvantages'
+// import RunningStringSecond from '@/components/ui/RunningStringSecond/RunningStringSecond'
 
 type TCard = { img: string; text: string }
 

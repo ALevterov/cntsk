@@ -1,7 +1,7 @@
 import global from '@/styles/global.module.css'
 import styles from './TodaySection.module.css'
-import TodayTitle from '@/components/ui/TodaySection/TodayTitle'
-import Slider from '@/components/ui/Slider/Slider'
+import TodayTitle from '@/components/ui/Sections/TodaySection/TodayTitle'
+import Slider from '@/components/ui/Common/Slider/Slider'
 const TodaySection = () => {
   return (
     <div className={styles.section}>

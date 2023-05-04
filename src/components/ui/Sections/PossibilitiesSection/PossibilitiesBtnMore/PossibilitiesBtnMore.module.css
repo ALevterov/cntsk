@@ -1,0 +1,26 @@
+.btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 16px;
+  gap: 10px;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+
+  color: var(--medium-green);
+
+  border: 1px solid var(--medium-green);
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #fff;
+}
+.arrowContainer {
+  transition: transform 0.3s ease;
+}
+.rotated {
+  transform: rotate(-90deg);
+}
