@@ -27,23 +27,23 @@ export default function Home() {
           sectionRef.current.style.marginTop = `calc(${window.scrollY}px)`
         }
       }
-      if (firstHalfRef.current) {
-        console.log('1', firstHalfRef.current.clientHeight)
-        console.log('2', firstHalfRef.current.offsetHeight)
-        console.log('3', firstHalfRef.current.scrollHeight)
-      }
-      if (firstHalfRef.current && secondHalfRef.current) {
-        const dif =
-          window.scrollY - firstHalfRef.current.clientHeight + 120 * vh
-        if (window.scrollY >= firstHalfRef.current.clientHeight + 120 * vh) {
-          firstHalfRef.current.style.transform = `translatY(${-1 * dif})`
-          secondHalfRef.current.style.marginTop = `calc(${window.scrollY}px)`
-        }
-      }
+      // if (firstHalfRef.current) {
+      //   console.log('1', firstHalfRef.current.clientHeight)
+      //   console.log('2', firstHalfRef.current.offsetHeight)
+      //   console.log('3', firstHalfRef.current.scrollHeight)
+      // }
+      // if (firstHalfRef.current && secondHalfRef.current) {
+      //   const dif =
+      //     window.scrollY - firstHalfRef.current.clientHeight + 120 * vh
+      //   if (window.scrollY >= firstHalfRef.current.clientHeight + 120 * vh) {
+      //     firstHalfRef.current.style.transform = `translatY(${-1 * dif})`
+      //     secondHalfRef.current.style.marginTop = `calc(${window.scrollY}px)`
+      //   }
+      // }
     })
-    if (secondHalfRef.current && firstHalfRef.current) {
-      secondHalfRef.current.style.marginTop = `calc(${firstHalfRef.current.clientHeight}px + 120vh)`
-    }
+    // if (secondHalfRef.current && firstHalfRef.current) {
+    //   secondHalfRef.current.style.marginTop = `calc(${firstHalfRef.current.clientHeight}px + 120vh)`
+    // }
   }, [])
   const menuIconClasses = useMemo(() => {
     const classes = [menuStyles.menuIcon]
@@ -68,9 +68,9 @@ export default function Home() {
           <PossibilitiesSection />
         </div>
       </div>
-      <div className={styles.secondHalfWrapper} ref={secondHalfRef}>
+      {/* <div className={styles.secondHalfWrapper} ref={secondHalfRef}>
         <AboutSection />
-      </div>
+      </div> */}
     </>
   )
 }
