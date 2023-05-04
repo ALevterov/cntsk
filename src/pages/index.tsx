@@ -8,21 +8,42 @@ import VideoSection from '@/components/sections/VideoSection/VideoSection'
 import PossibilitiesSection from '@/components/sections/PossibilitiesSection/PossibilitiesSection'
 import MenuButton from '@/components/ui/Common/MenuButton/MenuButton'
 import Menu from '@/components/ui/Common/Menu/Menu'
+import AboutSection from '@/components/sections/About/AboutSection'
+
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false)
   const toggleMenu = useCallback(() => {
     setMenuOpen(prev => !prev)
   }, [])
-
   const sectionRef = useRef<HTMLDivElement | null>(null)
+  const firstHalfRef = useRef<HTMLDivElement | null>(null)
+  const secondHalfRef = useRef<HTMLDivElement | null>(null)
+
   useEffect(() => {
     window.addEventListener('scroll', () => {
+      const vh = window.innerHeight / 100
       if (sectionRef.current) {
         if (window.scrollY <= window.innerHeight + 200) {
           sectionRef.current.style.marginTop = `calc(${window.scrollY}px)`
         }
       }
+      if (firstHalfRef.current) {
+        console.log('1', firstHalfRef.current.clientHeight)
+        console.log('2', firstHalfRef.current.offsetHeight)
+        console.log('3', firstHalfRef.current.scrollHeight)
+      }
+      if (firstHalfRef.current && secondHalfRef.current) {
+        const dif =
+          window.scrollY - firstHalfRef.current.clientHeight + 120 * vh
+        if (window.scrollY >= firstHalfRef.current.clientHeight + 120 * vh) {
+          firstHalfRef.current.style.transform = `translatY(${-1 * dif})`
+          secondHalfRef.current.style.marginTop = `calc(${window.scrollY}px)`
+        }
+      }
     })
+    if (secondHalfRef.current && firstHalfRef.current) {
+      secondHalfRef.current.style.marginTop = `calc(${firstHalfRef.current.clientHeight}px + 120vh)`
+    }
   }, [])
   const menuIconClasses = useMemo(() => {
     const classes = [menuStyles.menuIcon]
@@ -37,13 +58,18 @@ export default function Home() {
       <div className={menuIconClasses.join(' ')} onClick={toggleMenu}>
         <MenuButton />
       </div>
-      <Menu opened={menuOpen} />
-      <FirstSection />
-      <div className={styles.contentContainer} ref={sectionRef}>
-        <SectionSection />
-        <TodaySection />
-        <VideoSection />
-        <PossibilitiesSection />
+      <div className={styles.firstHalfWrapper} ref={firstHalfRef}>
+        <Menu opened={menuOpen} />
+        <FirstSection />
+        <div className={styles.contentContainer} ref={sectionRef}>
+          <SectionSection />
+          <TodaySection />
+          <VideoSection />
+          <PossibilitiesSection />
+        </div>
+      </div>
+      <div className={styles.secondHalfWrapper} ref={secondHalfRef}>
+        <AboutSection />
       </div>
     </>
   )

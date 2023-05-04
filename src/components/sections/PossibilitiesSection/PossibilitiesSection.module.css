@@ -4,39 +4,37 @@
 }
 .cardsWrapper {
   display: flex;
-  gap: 50px;
-  flex-direction: column;
+  gap: 40px;
+  flex-wrap: wrap;
 }
 
 .cardContainer {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 40px;
-  align-items: flex-start;
+  flex-direction: column;
+  gap: 50px;
 }
 
-.card1 {
+div.card1 {
   height: 293px;
 }
-.card2 {
+div.card2 {
   height: 236px;
 }
-.card3 {
+div.card3 {
   height: 197px;
 }
-.card4 {
+div.card4 {
   height: 215px;
 }
-.card5 {
+div.card5 {
   height: 274px;
 }
-.card6 {
+div.card6 {
   height: 0px;
 }
-.card7 {
+div.card7 {
   height: 176px;
 }
-.card8 {
+div.card8 {
   height: 0px;
 }

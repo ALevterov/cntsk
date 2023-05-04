@@ -8,24 +8,34 @@ import SliderNextIcon from '@/icons/SliderNextIcon'
 
 const slides = [
   {
-    text: 'Налаженные рабочие контакты и возможность публикаций в более чем 150 крупнейших международных информационных ресурсах и изданиях, в том числе таких как: Reuters, Bloomberg, The Wall Street Journal, The Washington Post, Le Figaro, The Times, Foreign Policy, Suddeutshe Zeitung, La Republica, Cyprus Mail, New Europe, European Reporter, Brussels Times, Aljazeera, FOX News, Yahoo.',
+    text: `Налаженные рабочие контакты и возможность публикаций в более чем 150 крупнейших международных информационных ресурсах и изданиях, в том числе таких как: Reuters, Bloomberg, The Wall Street Journal, The Washington Post, Le Figaro, The Times, Foreign Policy, Suddeutshe Zeitung, La Republica, Cyprus Mail, New Europe, European Reporter, Brussels Times, Aljazeera, FOX News, Yahoo.`,
     index: '01',
   },
   {
-    text: 'Налаженные рабочие контакты и возможность публикаций в более чем 150 крупнейших международных информационных ресурсах и изданиях, в том числе таких как: Reuters, Bloomberg, The Wall Street Journal, The Washington Post, Le Figaro, The Times, Foreign Policy, Suddeutshe Zeitung, La Republica, Cyprus Mail, New Europe, European Reporter, Brussels Times, Aljazeera, FOX News, Yahoo.',
+    text: `Пул наиболее авторитетных и качественных российских изданий включая:
+		«Комсомольскую правду», «Аргументы и Факты», «Московский комсомолец», «РБК», «Ведомости», «Независимую газету», «Известия»,
+		«Российскую газету.`,
     index: '02',
   },
   {
-    text: 'Налаженные рабочие контакты и возможность публикаций в более чем 150 крупнейших международных информационных ресурсах и изданиях, в том числе таких как: Reuters, Bloomberg, The Wall Street Journal, The Washington Post, Le Figaro, The Times, Foreign Policy, Suddeutshe Zeitung, La Republica, Cyprus Mail, New Europe, European Reporter, Brussels Times, Aljazeera, FOX News, Yahoo.',
+    text: `Общий охват международной аудитории через собственные каналы информации – более 200 миллионов человек`,
     index: '03',
   },
   {
-    text: 'Налаженные рабочие контакты и возможность публикаций в более чем 150 крупнейших международных информационных ресурсах и изданиях, в том числе таких как: Reuters, Bloomberg, The Wall Street Journal, The Washington Post, Le Figaro, The Times, Foreign Policy, Suddeutshe Zeitung, La Republica, Cyprus Mail, New Europe, European Reporter, Brussels Times, Aljazeera, FOX News, Yahoo.',
+    text: `Собственная сеть блоггеров и стриммеров по всему миру, включая страны Африки и Ближнего Востока`,
     index: '04',
   },
   {
-    text: 'Налаженные рабочие контакты и возможность публикаций в более чем 150 крупнейших международных информационных ресурсах и изданиях, в том числе таких как: Reuters, Bloomberg, The Wall Street Journal, The Washington Post, Le Figaro, The Times, Foreign Policy, Suddeutshe Zeitung, La Republica, Cyprus Mail, New Europe, European Reporter, Brussels Times, Aljazeera, FOX News, Yahoo.',
+    text: `Возможность создания уникального и качественного контента (видео, аудио, тексты) силами собственных авторов, блогеров, продюсеров на собственной современной производственной базе`,
     index: '05',
+  },
+  {
+    text: `Уникальная команда менеджеров, специалистов, а также более 500 волонтеров, позволяющая проводить информационнные коммуникационные кампании любой сложности (в том числе избирательные кампании, массовые мероприятия, пресс-конференции) не только в регионах России, но в и в других странах мира`,
+    index: '06',
+  },
+  {
+    text: `База из 300 российских и иностранных журналистов, признанных экспертов в различных областях, лидеров общественного мнения – которые могут быть интегрированы в повестку Ваших мероприятий и выступлений, в содержание Ваших информационных и рекламных материалов`,
+    index: '07',
   },
 ]
 
@@ -33,7 +43,6 @@ const Slider = () => {
   const pagination = {
     clickable: true,
     renderBullet: (index: number, className: string) => {
-      console.log(index, className)
       return '<span class="' + className + '">' + '</span>'
     },
   }
@@ -48,7 +57,7 @@ const Slider = () => {
       pagination={pagination}
       modules={[Pagination, Navigation]}
       className={styles.swiper}
-      onSlideChange={index => console.log(index)}
+      initialSlide={1}
     >
       {slides.map((slide, i) => (
         <SwiperSlide className={styles.slide} key={i}>

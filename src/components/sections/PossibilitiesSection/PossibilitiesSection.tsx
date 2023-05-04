@@ -42,7 +42,7 @@ const PossibilitiesSection = () => {
           Возможные направления применения возможностей ЦНТСК
         </SimpleTitle>
         <div className={styles.cardsWrapper}>
-          <div className={[styles.cardContainer, 'card-container'].join(' ')}>
+          <div className={styles.cardContainer}>
             <PossibilitiesCard
               className={styles.card1}
               title='Политические проекты'
@@ -82,6 +82,8 @@ const PossibilitiesSection = () => {
                 </p>
               </>
             </PossibilitiesCard>
+          </div>
+          <div className={styles.cardContainer}>
             <PossibilitiesCard
               title='Работа с общественным мнением'
               image={img1.src}
@@ -146,6 +148,8 @@ const PossibilitiesSection = () => {
             >
               <></>
             </PossibilitiesCard>
+          </div>
+          <div className={styles.cardContainer}>
             <PossibilitiesCard
               title='Реализация национальных проектов'
               image={img1.src}

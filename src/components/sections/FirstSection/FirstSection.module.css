@@ -21,7 +21,7 @@
   transform: translateY(0);
   transition: 0.3s transform;
   will-change: transform;
-  z-index: 6;
+  z-index: 99999;
 }
 .menuIcon.opened {
   transform: translateY(379px);
