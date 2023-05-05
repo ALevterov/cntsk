@@ -32,7 +32,7 @@ const cards: TCard[] = [
   },
 ]
 
-const SectionSection = () => {
+const SecondSection = () => {
   return (
     <div className={styles.section}>
       <div className={[global.container, styles.container].join(' ')}>
@@ -72,4 +72,4 @@ const SectionSection = () => {
   )
 }
 
-export default SectionSection
+export default SecondSection

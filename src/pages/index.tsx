@@ -1,6 +1,6 @@
 import styles from '@/styles/Home.module.css'
 import FirstSection from '@/components/sections/FirstSection/FirstSection'
-import SectionSection from '@/components/sections/SecondSection/SecondSection'
+import SecondSection from '@/components/sections/SecondSection/SecondSection'
 import TodaySection from '@/components/sections/TodaySection/TodaySection'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import menuStyles from '@/components/sections/FirstSection/FirstSection.module.css'
@@ -27,23 +27,18 @@ export default function Home() {
           sectionRef.current.style.marginTop = `calc(${window.scrollY}px)`
         }
       }
-      // if (firstHalfRef.current) {
-      //   console.log('1', firstHalfRef.current.clientHeight)
-      //   console.log('2', firstHalfRef.current.offsetHeight)
-      //   console.log('3', firstHalfRef.current.scrollHeight)
-      // }
-      // if (firstHalfRef.current && secondHalfRef.current) {
-      //   const dif =
-      //     window.scrollY - firstHalfRef.current.clientHeight + 120 * vh
-      //   if (window.scrollY >= firstHalfRef.current.clientHeight + 120 * vh) {
-      //     firstHalfRef.current.style.transform = `translatY(${-1 * dif})`
-      //     secondHalfRef.current.style.marginTop = `calc(${window.scrollY}px)`
-      //   }
-      // }
+      if (firstHalfRef.current && secondHalfRef.current) {
+        const dif =
+          window.scrollY - firstHalfRef.current.clientHeight + 120 * vh
+        if (window.scrollY >= firstHalfRef.current.clientHeight + 120 * vh) {
+          firstHalfRef.current.style.transform = `translatY(${-1 * dif})`
+          secondHalfRef.current.style.marginTop = `calc(${window.scrollY}px)`
+        }
+      }
     })
-    // if (secondHalfRef.current && firstHalfRef.current) {
-    //   secondHalfRef.current.style.marginTop = `calc(${firstHalfRef.current.clientHeight}px + 120vh)`
-    // }
+    if (secondHalfRef.current && firstHalfRef.current) {
+      secondHalfRef.current.style.marginTop = `calc(${firstHalfRef.current.clientHeight}px + 120vh)`
+    }
   }, [])
   const menuIconClasses = useMemo(() => {
     const classes = [menuStyles.menuIcon]
@@ -62,10 +57,11 @@ export default function Home() {
         <Menu opened={menuOpen} />
         <FirstSection />
         <div className={styles.contentContainer} ref={sectionRef}>
-          <SectionSection />
+          <SecondSection />
           <TodaySection />
           <VideoSection />
           <PossibilitiesSection />
+          <AboutSection />
         </div>
       </div>
       {/* <div className={styles.secondHalfWrapper} ref={secondHalfRef}>
