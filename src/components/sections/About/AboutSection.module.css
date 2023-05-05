@@ -51,7 +51,6 @@
   justify-content: center;
   gap: 70px;
   position: relative;
-  z-index: 99;
 }
 .contentRight {
   padding: 140px 0;
@@ -84,8 +83,8 @@
   transform: rotate(180deg);
   top: -6px;
   left: -240px;
-  /* overflow: hidden; */
+  overflow: hidden;
   height: 100vh;
   writing-mode: vertical-lr;
-  z-index: 9;
+  z-index: 2;
 }
