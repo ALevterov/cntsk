@@ -10,6 +10,7 @@ import MenuButton from '@/components/ui/Common/MenuButton/MenuButton'
 import Menu from '@/components/ui/Common/Menu/Menu'
 import AboutSection from '@/components/sections/About/AboutSection'
 import BrandSection from '@/components/sections/BrandSection/BrandSection'
+import ManagmentSection from '@/components/sections/ManagmentSection/ManagmentSection'
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -70,6 +71,7 @@ export default function Home() {
       <div className={styles.secondHalfWrapper} ref={secondHalfRef}>
         <AboutSection />
         <BrandSection />
+        <ManagmentSection />
       </div>
     </>
   )
