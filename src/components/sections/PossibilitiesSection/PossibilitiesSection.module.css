@@ -1,6 +1,7 @@
 .section {
   padding-top: 100px;
   padding-bottom: 170px;
+  background-color: #fff;
 }
 .cardsWrapper {
   display: flex;

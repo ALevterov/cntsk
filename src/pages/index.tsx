@@ -9,6 +9,7 @@ import PossibilitiesSection from '@/components/sections/PossibilitiesSection/Pos
 import MenuButton from '@/components/ui/Common/MenuButton/MenuButton'
 import Menu from '@/components/ui/Common/Menu/Menu'
 import AboutSection from '@/components/sections/About/AboutSection'
+import BrandSection from '@/components/sections/BrandSection/BrandSection'
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -23,15 +24,17 @@ export default function Home() {
     window.addEventListener('scroll', () => {
       const vh = window.innerHeight / 100
       if (sectionRef.current) {
-        if (window.scrollY <= window.innerHeight + 200) {
+        if (window.scrollY <= window.innerHeight + 600) {
           sectionRef.current.style.marginTop = `calc(${window.scrollY}px)`
         }
       }
       if (firstHalfRef.current && secondHalfRef.current) {
-        const dif =
-          window.scrollY - firstHalfRef.current.clientHeight + 120 * vh
-        if (window.scrollY >= firstHalfRef.current.clientHeight + 120 * vh) {
-          firstHalfRef.current.style.transform = `translatY(${-1 * dif})`
+        const dif = window.scrollY - firstHalfRef.current.clientHeight
+        if (
+          window.scrollY >= firstHalfRef.current.clientHeight &&
+          window.scrollY <= firstHalfRef.current.clientHeight + 180 * vh
+        ) {
+          firstHalfRef.current.style.transform = `translateY(${-1 * dif})`
           secondHalfRef.current.style.marginTop = `calc(${window.scrollY}px)`
         }
       }
@@ -61,12 +64,13 @@ export default function Home() {
           <TodaySection />
           <VideoSection />
           <PossibilitiesSection />
-          <AboutSection />
+          {/* <AboutSection /> */}
         </div>
       </div>
-      {/* <div className={styles.secondHalfWrapper} ref={secondHalfRef}>
+      <div className={styles.secondHalfWrapper} ref={secondHalfRef}>
         <AboutSection />
-      </div> */}
+        <BrandSection />
+      </div>
     </>
   )
 }

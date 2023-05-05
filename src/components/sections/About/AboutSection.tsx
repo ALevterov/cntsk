@@ -3,6 +3,7 @@ import styles from './AboutSection.module.css'
 import global from '@/styles/global.module.css'
 import WSIcon from '@/icons/WSIcon'
 import ASCIcon from '@/icons/ASCIcon'
+import BlackTitle from '@/components/ui/Common/BlackTitle/BlackTitle'
 const AboutSection = () => {
   return (
     <div className={styles.section}>
@@ -25,7 +26,7 @@ const AboutSection = () => {
                 существенно расширяет свои компетенции и возможности.
               </p>
             </div>
-            <div className={styles.title}>о компании</div>
+            <BlackTitle>о компании</BlackTitle>
           </div>
           <div className={styles.contentLeft}>
             <h1 className={styles.mainText}>ЦНТСК</h1>

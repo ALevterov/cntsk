@@ -6,3 +6,8 @@
   z-index: 9;
   top: 0;
 }
+.firstHalfWrapper {
+  margin-bottom: 100vh;
+  position: relative;
+  z-index: 10;
+}

@@ -1,0 +1,30 @@
+.container {
+  width: 240px;
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  background-color: var(--white-grey);
+  transition: background-color 0.3s ease;
+  opacity: 1;
+  border-radius: 29px;
+}
+.container:hover {
+  background-color: #cdced1;
+}
+
+.title {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 40px;
+
+  color: var(--card-text);
+}
