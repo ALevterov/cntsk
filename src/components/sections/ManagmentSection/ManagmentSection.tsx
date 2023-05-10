@@ -13,7 +13,7 @@ const ManagmentSection = () => {
         <BlackTitle>РУКОВОДСТВО</BlackTitle>
         <div className={styles.cardsContainer}>
           <ManagmentCard
-            title='Вадим Дегтярев '
+            title='Вадим Дегтярев'
             description='Генеральный директор ЦНТСК'
             image={img1.src}
           >

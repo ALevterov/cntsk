@@ -38,6 +38,8 @@
   cursor: pointer;
   border: 1px solid var(--medium-green);
   border-radius: 8px;
+
+  margin-top: 20px;
 }
 .btn:hover {
   background-color: var(--medium-green);
@@ -65,10 +67,12 @@
   font-size: 30px;
   line-height: 22px;
   color: #000000;
+  padding: 0 13px;
 }
 
 .description {
-  margin-bottom: 42px;
+  margin-bottom: 22px;
+  padding: 0 13px;
 
   font-style: normal;
   font-weight: 400;
@@ -83,13 +87,16 @@
 .content {
   height: 0;
   transition: height 0.3s ease;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .content p {
   margin-bottom: 20px;
   padding: 0 20px;
 }
+.content p:last-child {
+  margin-bottom: 0;
+}
 .contentOpened {
   height: 503px;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
 }

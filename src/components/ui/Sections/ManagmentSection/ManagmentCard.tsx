@@ -1,8 +1,10 @@
 import Image from 'next/image'
 import styles from './ManagmentCard.module.css'
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useState } from 'react'
 import ArrowMore from '@/icons/ArrowMore'
+import { OverlayScrollbarsComponent } from 'overlayscrollbars-react'
+
 const ManagmentCard = ({
   image,
   title,
@@ -18,20 +20,26 @@ const ManagmentCard = ({
   const toggleCard = () => {
     setIsOpened(prev => !prev)
   }
+  const scrollRef = useRef<HTMLDivElement | null>(null)
   return (
     <div className={styles.container}>
       <div className={styles.imageContainer}>
         <img src={image} alt='photo' />
       </div>
       <div className={styles.title}>{title}</div>
-      <div className={styles.description}>{description}</div>
-      <div
-        className={[styles.content, isOpened ? styles.contentOpened : ''].join(
-          ' '
-        )}
-      >
-        {children}
-      </div>
+      {!isOpened && <div className={styles.description}>{description}</div>}
+      <OverlayScrollbarsComponent>
+        <div
+          className={[
+            styles.content,
+            isOpened ? styles.contentOpened : '',
+          ].join(' ')}
+          ref={scrollRef}
+          // style={{ height: '120px' }}
+        >
+          {children}
+        </div>
+      </OverlayScrollbarsComponent>
       <button className={styles.btn} onClick={toggleCard}>
         {isOpened ? 'свернуть' : 'подробнее'}
         <div
