@@ -19,6 +19,8 @@
 .bottom {
   max-width: 519px;
   max-height: 331px;
+  min-width: 519px;
+  min-height: 331px;
 }
 .title {
   font-style: normal;

@@ -1,6 +1,6 @@
-import { load } from '@2gis/mapgl'
-import { useEffect } from 'react'
-
+import GoogleMapReact from 'google-map-react'
+// AIzaSyCkCszkPyGLpISweunZlyV2Z2_s_rkYwlA
+// AIzaSyARN4ZLpzuzwGo2M6PKr2M--juR5zJyrew
 export const Map = ({
   id,
   coords,
@@ -8,17 +8,13 @@ export const Map = ({
   id: string
   coords: { x: number; y: number }
 }) => {
-  useEffect(() => {
-    let map: any
-    load().then(mapglAPI => {
-      map = new mapglAPI.Map(id, {
-        center: [coords.x, coords.y],
-        zoom: 13,
-        key: 'rudcgu3317',
-      })
-    })
-    return () => map && map.destroy()
-  }, [])
-
-  return <div style={{ width: '100%', height: '100%' }} id={id}></div>
+  return (
+    <div style={{ width: '100%', height: '100%' }} id={id}>
+      <GoogleMapReact
+        bootstrapURLKeys={{ key: 'AIzaSyDcwGyRxRbcNGWOFQVT87A1mkxEOfm8t0w' }}
+        defaultCenter={{ lat: coords.x, lng: coords.y }}
+        defaultZoom={13}
+      ></GoogleMapReact>
+    </div>
+  )
 }
