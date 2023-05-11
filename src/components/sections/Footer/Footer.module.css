@@ -1,0 +1,13 @@
+.section {
+  padding-top: 100px;
+  padding-bottom: 144px;
+  background-color: var(--black);
+}
+.cardsContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 42px;
+
+  margin-top: 80px;
+  align-items: stretch;
+}

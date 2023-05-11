@@ -11,6 +11,7 @@ import Menu from '@/components/ui/Common/Menu/Menu'
 import AboutSection from '@/components/sections/About/AboutSection'
 import BrandSection from '@/components/sections/BrandSection/BrandSection'
 import ManagmentSection from '@/components/sections/ManagmentSection/ManagmentSection'
+import Footer from '@/components/sections/Footer/Footer'
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -72,6 +73,7 @@ export default function Home() {
         <AboutSection />
         <BrandSection />
         <ManagmentSection />
+        <Footer />
       </div>
     </>
   )

@@ -1,0 +1,68 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  overflow: hidden;
+}
+.container > div {
+  flex-grow: 1;
+}
+.top {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.top > div {
+  flex-grow: 1;
+}
+.bottom {
+  max-width: 519px;
+  max-height: 331px;
+}
+.title {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 96.3%;
+
+  /* identical to box height, or 24px */
+
+  color: #ffffff;
+  margin-bottom: 56px;
+}
+.contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: space-between;
+}
+.contacts > div {
+  display: flex;
+  gap: 91px;
+  padding-left: 32px;
+  display: flex;
+  align-items: flex-start;
+}
+/* .contacts > div > svg {
+  position: relative;
+  top: 4px;
+} */
+.contacts p {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 22px;
+  line-height: 30px;
+
+  /* or 136% */
+
+  color: #ffffff;
+  margin-bottom: 80px;
+  max-width: 256px;
+}
+.mapWrapper {
+  box-shadow: 18px 14px 59px rgba(0, 0, 0, 0.49);
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+}
