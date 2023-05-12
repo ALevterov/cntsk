@@ -7,7 +7,10 @@ const OrderBtn = ({
   active: boolean
 }) => {
   return (
-    <button className={[styles.btn, active ? styles.active : ''].join(' ')}>
+    <button
+      className={[styles.btn, active ? styles.active : ''].join(' ')}
+      disabled={active}
+    >
       {children}
     </button>
   )

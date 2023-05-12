@@ -5,9 +5,13 @@ import { useEffect, useState } from 'react'
 import OrderBtn from '@/components/ui/Common/OrderBtn/OrderBtn'
 import services from '@/helpers/services'
 import useDebounce from '@/hooks/useDebounce'
+import findServicesByString from '../../../helpers/findServicesByString'
+import OrderFindedItem from '@/components/ui/Common/OrderFindedItem/OrderFindedItem'
+import SearchServiceIcon from '@/icons/SearchServiceIcon'
 const ServicesSection = () => {
+  const [services, setServices] = useState<string[] | []>([])
   const [input, setInput] = useState('')
-  const searchString = useDebounce(input, 1000)
+  const searchString = useDebounce(input, 300)
   const [orderActive, setOrderActive] = useState(false)
   const handleChangeInput = (e: React.FormEvent<HTMLInputElement>) => {
     console.log(e)
@@ -15,6 +19,10 @@ const ServicesSection = () => {
   }
   useEffect(() => {
     console.log('logic here!')
+    const { result: services, words } = findServicesByString(searchString)
+    console.log(words)
+    console.log(services)
+    setServices(services)
   }, [searchString])
   return (
     <div className={styles.section}>
@@ -36,11 +44,19 @@ const ServicesSection = () => {
               className={styles.input}
               placeholder='Расскажите, что Вам необходимо. Оставьте заявку, и мы поможем вам реализовать задачу.'
             />
+            <SearchServiceIcon />
           </div>
           <div className={styles.inputWrapperBottom}>
             <div className={styles.solveText}>наше решение для вас:</div>
-            <div className={styles.solveItems}></div>
-            <OrderBtn active={orderActive}>Заказать</OrderBtn>
+            <div className={styles.solveItems}>
+              {services.length &&
+                services.map(service => (
+                  <OrderFindedItem key={service}>{service}</OrderFindedItem>
+                ))}
+            </div>
+            <OrderBtn active={services[0] !== 'индивидуальные условия'}>
+              Заказать
+            </OrderBtn>
           </div>
         </div>
       </div>
