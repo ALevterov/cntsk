@@ -1,4 +1,4 @@
-import { Map } from '../Map/Map'
+import Map, { ICoords } from '../Map/Map'
 import styles from './MapItem.module.css'
 const MapItem = ({
   title,
@@ -9,7 +9,7 @@ const MapItem = ({
   title: string
   children: React.ReactNode
   id: string
-  coords: { x: number; y: number }
+  coords: ICoords
 }) => {
   return (
     <div className={styles.container}>
@@ -19,7 +19,7 @@ const MapItem = ({
       </div>
       <div className={styles.bottom}>
         <div className={styles.mapWrapper}>
-          <Map id={id} coords={coords} />
+          <Map coords={coords} />
         </div>
       </div>
     </div>

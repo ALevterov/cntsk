@@ -1,0 +1,29 @@
+.btn {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+
+  /* identical to box height */
+  text-transform: uppercase;
+
+  color: #000000;
+
+  background: rgba(125, 255, 177, 0.4);
+
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 43px;
+  gap: 10px;
+
+  transition: all 0.3s ease;
+  border: none;
+  outline: none;
+}
+.btn.active {
+  opacity: 1;
+  background: rgba(125, 255, 177, 1);
+  cursor: pointer;
+}

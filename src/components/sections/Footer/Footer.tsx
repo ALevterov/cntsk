@@ -5,9 +5,12 @@ import MapItem from '@/components/ui/Sections/Footer/MapItem/MapItem'
 import LocationIcon from '@/icons/LocationIcon'
 import MailIcon from '@/icons/MailIcon'
 import PhoneIcon from '@/icons/PhoneIcon'
-const coords1 = { y: 55.704098, x: 37.614599 }
-const coords2 = { y: -26.120688, x: 28.012848 }
-const coords3 = { y: 44.800028, x: 20.333483 }
+import { ICoords } from '@/components/ui/Sections/Footer/Map/Map'
+
+const coords1: ICoords = { lat: 55.704098, lng: 37.614599 }
+const coords2: ICoords = { lat: -26.120688, lng: 28.012848 }
+const coords3: ICoords = { lat: 44.800028, lng: 20.333483 }
+
 const Footer = () => {
   return (
     <div className={styles.section}>

@@ -12,6 +12,7 @@ import AboutSection from '@/components/sections/About/AboutSection'
 import BrandSection from '@/components/sections/BrandSection/BrandSection'
 import ManagmentSection from '@/components/sections/ManagmentSection/ManagmentSection'
 import Footer from '@/components/sections/Footer/Footer'
+import ServicesSection from '@/components/sections/ServicesSection/ServicesSection'
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -65,8 +66,8 @@ export default function Home() {
           <SecondSection />
           <TodaySection />
           <VideoSection />
+          <ServicesSection />
           <PossibilitiesSection />
-          {/* <AboutSection /> */}
         </div>
       </div>
       <div className={styles.secondHalfWrapper} ref={secondHalfRef}>

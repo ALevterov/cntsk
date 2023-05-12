@@ -1,0 +1,16 @@
+.container {
+  font-style: italic;
+  font-weight: 1000;
+  font-size: 22px;
+  line-height: 96.3%;
+
+  /* or 21px */
+  text-transform: uppercase;
+
+  color: var(--light-green);
+  padding: 19px 25px;
+
+  border: 1px solid var(--light-green);
+  border-radius: 15px;
+  background-color: transparent;
+}
