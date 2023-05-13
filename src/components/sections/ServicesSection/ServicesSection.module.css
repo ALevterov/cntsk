@@ -77,3 +77,30 @@
   flex-grow: 1;
   align-items: flex-start;
 }
+.selectBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.selectBlock button {
+  align-self: center;
+  justify-self: center;
+}
+.selectTitle {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+
+  color: #ffffff;
+}
+.selectItemsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: flex-start;
+}
+.blockPassive {
+  opacity: 0.6;
+}

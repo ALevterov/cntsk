@@ -10,7 +10,7 @@ const findServicesByString = (string: string) => {
         if (string.match(regExp)) {
           result.push(name)
           words.push(word)
-          break out
+          break
         }
       }
     }
