@@ -5,13 +5,7 @@ import DraggableLine from '@/components/ui/Sections/CasesSection/DraggableLine/D
 import { useEffect, useRef, useState } from 'react'
 import CasesItem from '@/components/ui/Sections/CasesSection/CasesItem/CasesItem'
 import { itemsBottom, itemsTop } from './CasesItems'
-import {
-  useMotionValue,
-  useScroll,
-  useSpring,
-  useTransform,
-  motion,
-} from 'framer-motion'
+import { useScroll, useSpring, motion } from 'framer-motion'
 
 function isNumber(number: number | null): number {
   if (number === null) {
@@ -25,8 +19,28 @@ const CasesSection = () => {
   const [offsetX, setOffsetX] = useState<null | number>(0)
   const physics = { damping: 15, mass: 0.27, stiffness: 55 }
   const spring = useSpring(isNumber(offsetX), physics)
+  const prevOffset = useRef(offsetX)
   useEffect(() => {
-    spring.set(isNumber(offsetX) * -6)
+    if (isNumber(offsetX) > 388 && isNumber(offsetX) < 518) {
+      spring.set(isNumber(offsetX) * -8)
+      prevOffset.current = isNumber(offsetX) * -6
+    }
+    if (isNumber(offsetX) < 388) {
+      spring.set(isNumber(offsetX) * -6)
+      prevOffset.current = isNumber(offsetX) * -6
+    }
+    if (isNumber(offsetX) > 518 && isNumber(offsetX) < 655) {
+      spring.set(isNumber(offsetX) * -6.5)
+    }
+    // if (isNumber(offsetX) > 655) {
+    //   spring.set(isNumber(offsetX) * -6.5)
+    // }
+    if (isNumber(offsetX) > 655 && isNumber(offsetX) < 776) {
+      spring.set(isNumber(offsetX) * -6.5)
+    }
+    if (isNumber(offsetX) > 776) {
+    }
+    console.log(offsetX)
   }, [offsetX, spring])
   const ref = useRef(null)
   const { scrollXProgress } = useScroll({ container: ref })
