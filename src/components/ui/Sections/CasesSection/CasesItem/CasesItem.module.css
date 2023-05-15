@@ -1,0 +1,75 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cardContainer {
+  padding: 35px;
+  background: #ffffff;
+  box-shadow: 18px 14px 59px rgba(0, 0, 0, 0.11);
+  border-radius: 20px;
+
+  display: flex;
+  gap: 35px;
+  position: relative;
+  align-items: center;
+}
+.year {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 35px;
+  line-height: 22px;
+
+  /* identical to box height, or 64% */
+  text-transform: uppercase;
+
+  color: #248c4e;
+
+  transform: rotate(180deg);
+  writing-mode: vertical-lr;
+}
+.text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 22px;
+
+  /* or 112% */
+
+  color: #000000;
+  width: 211px;
+}
+.cardTop {
+  margin-bottom: 40px;
+}
+.cardTop::after {
+  display: block;
+  content: '';
+  width: 35px;
+  height: 35px;
+  background-color: #fff;
+  position: absolute;
+  bottom: -25px;
+  transform: rotate(45deg) translateX(-50%);
+  left: calc(50% - 6px);
+}
+.cardBottom {
+  margin-top: 40px;
+}
+.cardBottom::before {
+  display: block;
+  content: '';
+  width: 35px;
+  height: 35px;
+  background-color: #fff;
+  position: absolute;
+  top: -25px;
+  transform: rotate(45deg) translateX(-50%);
+  left: 50%;
+}
+.circle {
+  width: 31px;
+  height: 31px;
+  background-color: var(--medium-green);
+  border-radius: 50%;
+}

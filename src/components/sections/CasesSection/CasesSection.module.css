@@ -3,4 +3,27 @@
 .sectionTop {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 37px;
+}
+.scrollableBlock {
+  overflow-x: scroll;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* align-items: center; */
+  /* justify-content: flex-start; */
+}
+.cardsTopContainer {
+  display: flex;
+  gap: 235px;
+  align-items: flex-end;
+  background-color: transparent;
+  padding-right: 40px;
+}
+.mainLine {
+  position: relative;
+  top: -19px;
+  height: 8px;
+  margin: 0 153px;
+  width: 5520px;
+  background-color: var(--medium-green);
 }

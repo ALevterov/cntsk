@@ -1,18 +1,24 @@
 import styles from './DraggableLine.module.css'
 import { motion, animate } from 'framer-motion'
-import { useEffect, useRef, useState } from 'react'
+import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react'
 
 interface ClickEvent extends React.MouseEvent<HTMLDivElement> {
   target: HTMLDivElement
 }
 
-const DraggableLine = () => {
+const DraggableLine = ({
+  offsetX,
+  setOffsetX,
+}: {
+  offsetX: null | number
+  setOffsetX: Dispatch<SetStateAction<null | number>>
+}) => {
   const initialPoint = useRef<null | number>(null)
   const mainLineRef = useRef<null | HTMLDivElement>(null)
   const pointRef = useRef<null | HTMLDivElement>(null)
   const lastPoint = useRef<null | HTMLDivElement>(null)
   const secondPoint = useRef<null | HTMLDivElement>(null)
-  const [offsetX, setOffsetX] = useState<null | number>(null)
+  // const [offsetX, setOffsetX] = useState<null | number>(null)
   const [constraintRight, setConstraintRight] = useState<number>(906)
 
   useEffect(() => {
