@@ -7,17 +7,26 @@
 }
 .scrollableBlock {
   overflow-x: scroll;
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* align-items: center; */
-  /* justify-content: flex-start; */
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+  scrollbar-width: none;
+
+  width: max-content;
 }
-.cardsTopContainer {
+.scrollableBlock::-webkit-scrollbar {
+  width: 0;
+}
+.cardsTopContainer,
+.cardsBottomContainer {
   display: flex;
   gap: 235px;
-  align-items: flex-end;
   background-color: transparent;
-  padding-right: 40px;
+}
+.cardsTopContainer {
+  align-items: flex-end;
+}
+.cardsBottomContainer {
+  align-items: flex-start;
 }
 .mainLine {
   position: relative;
@@ -26,4 +35,10 @@
   margin: 0 153px;
   width: 5520px;
   background-color: var(--medium-green);
+}
+.cardsBottomContainer {
+  display: flex;
+  position: relative;
+  top: -39px;
+  left: 285px;
 }
