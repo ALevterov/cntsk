@@ -9,6 +9,10 @@ import OrderFindedItem from '@/components/ui/Common/OrderFindedItem/OrderFindedI
 import SearchServiceIcon from '@/icons/SearchServiceIcon'
 import SelectItem from '@/components/ui/Sections/ServicesSection/SelectItem/SelectItem'
 
+interface InputEvent extends React.MouseEvent<HTMLInputElement> {
+  target: HTMLInputElement
+}
+
 const selectItems = [
   'Мониторинг и работа с негативом',
   'Удаление негатива из источников',
@@ -38,8 +42,6 @@ const ServicesSection = () => {
   useEffect(() => {
     if (searchString !== '') {
       const { result: services, words } = findServicesByString(searchString)
-      console.log(words)
-      console.log(services)
       setServices(services)
     }
     if (searchString === '') {
@@ -53,13 +55,9 @@ const ServicesSection = () => {
     }
   }, [fieldActive])
 
-  const handleChangeInput = useCallback(
-    (e: React.FormEvent<HTMLInputElement>) => {
-      console.log(e)
-      setInput(e.target.value)
-    },
-    []
-  )
+  const handleChangeInput = useCallback((e: InputEvent) => {
+    setInput(e.target.value)
+  }, [])
   const handleSelectFocus = useCallback(() => {
     if (fieldActive === 'input') {
       setFieldActive('select')
@@ -79,10 +77,6 @@ const ServicesSection = () => {
     },
     [fieldActive]
   )
-
-  console.log(fieldActive)
-  console.log(selected)
-  console.log(services)
 
   return (
     <div className={styles.section}>

@@ -51,9 +51,6 @@ const DraggableLine = () => {
 
   const dragHandler = (data: any, info: any) => {
     if (initialPoint.current === null && secondPoint.current) {
-      console.log('info.point.x: ', info.point.x)
-      console.log('info.offset.x: ', info.offset.x)
-
       initialPoint.current =
         info.point.x - info.offset.x - secondPoint.current.offsetLeft
       if (info.point.x - initialPoint.current >= 0) {
@@ -93,13 +90,10 @@ const DraggableLine = () => {
     }
   }
   const onDragEnd = () => {
-    console.log('dragEnd')
-
     animate('#draggable-point', {
       x: [offsetX],
     })
   }
-  console.log(offsetX)
   return (
     <div>
       <div className={styles.line} ref={mainLineRef}>
