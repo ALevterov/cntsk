@@ -60,7 +60,7 @@ const DraggableLine = () => {
         setOffsetX(info.point.x - initialPoint.current)
       }
       if (info.point.x - initialPoint.current < 0) {
-        setOffsetX(0)
+        setOffsetX(-1)
       }
       if (info.point.x - initialPoint.current > constraintRight) {
         setOffsetX(constraintRight)
@@ -72,7 +72,7 @@ const DraggableLine = () => {
         setOffsetX(info.point.x - initialPoint.current)
       }
       if (info.point.x - initialPoint.current < 0) {
-        setOffsetX(0)
+        setOffsetX(-1)
       }
       if (info.point.x - initialPoint.current > constraintRight) {
         setOffsetX(constraintRight)
@@ -86,7 +86,7 @@ const DraggableLine = () => {
       setOffsetX(endPoint)
     }
     if (endPoint < 0) {
-      setOffsetX(0)
+      setOffsetX(-1)
     }
     if (endPoint > constraintRight) {
       setOffsetX(constraintRight)
