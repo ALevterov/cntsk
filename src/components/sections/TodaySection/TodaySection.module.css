@@ -10,6 +10,7 @@
   gap: 130px;
 
   margin-bottom: 120px;
+  justify-content: space-between;
 }
 .containerBottom {
   padding-right: 140px;
@@ -31,6 +32,6 @@
   color: #000000;
 }
 .slider {
-  width: 1020px;
+  width: 50vw;
   height: 500px;
 }

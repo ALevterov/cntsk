@@ -8,3 +8,10 @@
   color: #e1e2e1;
   white-space: nowrap;
 }
+
+@media screen and (max-width: 1700px) {
+  .title {
+    font-size: 102.418px;
+    line-height: 96.3%;
+  }
+}

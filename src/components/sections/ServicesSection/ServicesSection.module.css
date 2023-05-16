@@ -15,6 +15,7 @@
   font-size: 20px;
   line-height: 30px;
 
+  max-width: 1115px;
   /* or 150% */
   text-align: right;
 
@@ -103,4 +104,10 @@
 }
 .blockPassive {
   opacity: 0.6;
+}
+
+@media screen and (max-width: 1700px) {
+  .topText {
+    max-width: 960px;
+  }
 }

@@ -27,4 +27,5 @@
   line-height: 40px;
 
   color: var(--card-text);
+  white-space: nowrap;
 }

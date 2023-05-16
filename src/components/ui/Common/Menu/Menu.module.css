@@ -79,3 +79,13 @@
   text-decoration: none;
   outline: none;
 }
+@media screen and (max-width: 1800px) {
+  .menuList {
+    gap: 110px;
+  }
+}
+@media screen and (max-width: 1700px) {
+  .headerRight {
+    gap: 140px;
+  }
+}

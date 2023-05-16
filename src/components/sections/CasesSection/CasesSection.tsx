@@ -21,22 +21,22 @@ const CasesSection = () => {
   const spring = useSpring(isNumber(offsetX), physics)
   const prevOffset = useRef(offsetX)
   useEffect(() => {
-    if (isNumber(offsetX) > 388 && isNumber(offsetX) < 518) {
-      spring.set(isNumber(offsetX) * -8)
-      prevOffset.current = isNumber(offsetX) * -6
-    }
-    if (isNumber(offsetX) < 388) {
+    if (isNumber(offsetX) <= 388) {
       spring.set(isNumber(offsetX) * -6)
-      prevOffset.current = isNumber(offsetX) * -6
     }
-    if (isNumber(offsetX) > 518 && isNumber(offsetX) < 655) {
-      spring.set(isNumber(offsetX) * -6.5)
+    if (isNumber(offsetX) > 388 && isNumber(offsetX) <= 518) {
+      spring.set(isNumber(offsetX) * -8)
     }
-    // if (isNumber(offsetX) > 655) {
-    //   spring.set(isNumber(offsetX) * -6.5)
-    // }
-    if (isNumber(offsetX) > 655 && isNumber(offsetX) < 776) {
-      spring.set(isNumber(offsetX) * -6.5)
+    if (isNumber(offsetX) > 518 && isNumber(offsetX) <= 655) {
+      spring.set(518 * -6 + isNumber(offsetX) * -2.5)
+      if (prevOffset.current) {
+        prevOffset.current = 518 * -6 + isNumber(offsetX) * -2.5
+      }
+    }
+    if (isNumber(offsetX) > 655 && isNumber(offsetX) <= 776) {
+      if (prevOffset.current) {
+        spring.set(prevOffset.current + isNumber(offsetX) * -0.5)
+      }
     }
     if (isNumber(offsetX) > 776) {
     }

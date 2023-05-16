@@ -3,7 +3,7 @@
 .sectionTop {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 37px;
+  /* margin-bottom: 37px; */
 }
 .scrollableBlock {
   overflow-x: scroll;
@@ -12,6 +12,7 @@
   scrollbar-width: none;
 
   width: max-content;
+  padding: 37px 200px 100px 0px;
 }
 .scrollableBlock::-webkit-scrollbar {
   width: 0;

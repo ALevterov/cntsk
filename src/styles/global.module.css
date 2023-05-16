@@ -2,3 +2,10 @@
   margin: 0 140px;
   width: calc(100vw - 280px);
 }
+
+@media screen and (max-width: 1700px) {
+  .container {
+    margin: 0 105px;
+    width: calc(100vw - 210px);
+  }
+}

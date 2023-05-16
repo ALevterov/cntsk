@@ -16,3 +16,9 @@
 .text > p:last-child {
   margin-bottom: 0;
 }
+
+@media screen and (max-width: 1700px) {
+  .text {
+    width: 411px;
+  }
+}
