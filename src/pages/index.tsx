@@ -68,7 +68,7 @@ export default function Home() {
           <TodaySection />
           <VideoSection />
           <ServicesSection />
-          <PossibilitiesSection />
+          <PossibilitiesSection />с
         </div>
       </div>
       <div className={styles.secondHalfWrapper} ref={secondHalfRef}>
