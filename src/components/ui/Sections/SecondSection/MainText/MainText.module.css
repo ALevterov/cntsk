@@ -22,3 +22,9 @@
     width: 411px;
   }
 }
+@media screen and (max-width: 1700px) {
+  .text {
+    font-size: 16.296px;
+    line-height: 22px;
+  }
+}

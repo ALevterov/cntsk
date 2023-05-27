@@ -7,10 +7,10 @@
 .containerTop {
   display: flex;
   align-items: center;
-  gap: 130px;
 
   margin-bottom: 120px;
   justify-content: space-between;
+  gap: 40px;
 }
 .containerBottom {
   padding-right: 140px;
@@ -34,4 +34,21 @@
 .slider {
   width: 50vw;
   height: 500px;
+}
+
+@media screen and (max-width: 1440px) {
+  .section {
+    padding-left: 105px;
+    padding-bottom: 50px;
+  }
+  .slider {
+    height: 375px;
+  }
+  .containerTop {
+    margin-bottom: 94px;
+  }
+  .bottomText {
+    font-size: 32.592px;
+    line-height: 38px;
+  }
 }

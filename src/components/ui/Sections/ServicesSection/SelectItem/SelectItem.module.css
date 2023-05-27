@@ -22,3 +22,11 @@
   background-color: var(--light-green);
   color: #000;
 }
+
+@media screen and (max-width: 1440px) {
+  .item {
+    padding: 14.5px;
+    font-size: 11.998px;
+    line-height: 15px;
+  }
+}

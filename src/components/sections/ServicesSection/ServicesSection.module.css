@@ -111,3 +111,50 @@
     max-width: 960px;
   }
 }
+
+@media screen and (max-width: 1440px) {
+  .section {
+    padding: 77px 0;
+  }
+  .topText {
+    max-width: 960px;
+    font-size: 14.4853px;
+    line-height: 22px;
+    max-width: 808px;
+  }
+  .top {
+    margin-bottom: 76px;
+  }
+  .inputWrapper {
+    margin-bottom: 25px;
+  }
+  .input {
+    padding: 18.5px 0 18.5px 87px;
+    border-radius: 15px;
+
+    font-size: 14.9975px;
+    line-height: 18px;
+  }
+  .inputWrapper svg {
+    width: 22px;
+    height: 22px;
+    left: 48px;
+  }
+  .solveText {
+    font-size: 14.9975px;
+    line-height: 22px;
+  }
+  .inputBlock {
+    margin-bottom: 76px;
+  }
+  .selectTitle {
+    font-size: 14.9975px;
+    line-height: 22px;
+  }
+  .selectItemsContainer {
+    gap: 31px;
+  }
+  .selectBlock {
+    gap: 37px;
+  }
+}

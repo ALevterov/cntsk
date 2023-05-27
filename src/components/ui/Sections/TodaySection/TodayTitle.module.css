@@ -15,3 +15,14 @@
     line-height: 96.3%;
   }
 }
+
+@media screen and (max-width: 1440px) {
+  .title {
+    font-size: 102.418px;
+    line-height: 96.3%;
+  }
+  .title span {
+    position: relative;
+    bottom: -5px;
+  }
+}

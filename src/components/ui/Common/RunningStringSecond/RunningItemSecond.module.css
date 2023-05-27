@@ -26,3 +26,11 @@
   top: 0;
   writing-mode: vertical-lr;
 }
+@media screen and (max-width: 1440px) {
+  .item {
+    font-size: 14.2476px;
+  }
+  .item::after {
+    right: calc(50% - 9px);
+  }
+}

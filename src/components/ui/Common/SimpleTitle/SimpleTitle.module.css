@@ -13,3 +13,12 @@
   margin-bottom: 100px;
   white-space: nowrap;
 }
+@media screen and (max-width: 1440px) {
+  .h1 {
+    font-size: 32.8659px;
+    line-height: 22px;
+  }
+  .title {
+    margin-bottom: 74px;
+  }
+}

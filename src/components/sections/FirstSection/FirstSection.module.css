@@ -26,3 +26,21 @@
 .menuIcon.opened {
   transform: translateY(379px);
 }
+.hiddenBlock {
+  width: 0;
+  height: 0;
+  background-color: 'transparent';
+  visibility: 'hidden';
+}
+.hiddenBlock:nth-child(2) {
+  display: none;
+}
+@media screen and (max-width: 1440px) {
+  .section {
+    padding-top: 73px;
+  }
+  .centralContainer {
+    height: auto;
+    justify-content: baseline;
+  }
+}

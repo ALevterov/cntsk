@@ -10,9 +10,11 @@ import { useScroll, useSpring, motion } from 'framer-motion'
 function isNumber(number: number | null): number {
   if (number === null) {
     return 0
-  } else {
-    return number
   }
+  if (number < 0) {
+    return 0
+  }
+  return number
 }
 
 const CasesSection = () => {
@@ -27,18 +29,19 @@ const CasesSection = () => {
     if (isNumber(offsetX) > 388 && isNumber(offsetX) <= 518) {
       spring.set(isNumber(offsetX) * -8)
     }
-    if (isNumber(offsetX) > 518 && isNumber(offsetX) <= 655) {
+    if (isNumber(offsetX) > 518 && isNumber(offsetX) <= 647) {
       spring.set(518 * -6 + isNumber(offsetX) * -2.5)
       if (prevOffset.current) {
         prevOffset.current = 518 * -6 + isNumber(offsetX) * -2.5
       }
     }
-    if (isNumber(offsetX) > 655 && isNumber(offsetX) <= 776) {
-      if (prevOffset.current) {
-        spring.set(prevOffset.current + isNumber(offsetX) * -0.5)
-      }
+    if (isNumber(offsetX) > 647 && isNumber(offsetX) <= 777) {
+      // if (prevOffset.current) {
+      spring.set(518 * -6 + isNumber(offsetX) * -2.5 + isNumber(offsetX) * -0.5)
+      // }
     }
-    if (isNumber(offsetX) > 776) {
+    if (isNumber(offsetX) > 777) {
+      spring.set(518 * -6 + isNumber(777) * -2.5 + isNumber(777) * -0.5)
     }
     console.log(offsetX)
   }, [offsetX, spring])

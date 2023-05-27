@@ -24,3 +24,17 @@
 .rotated {
   transform: rotate(-90deg);
 }
+
+@media screen and (max-width: 1440px) {
+  .btn {
+    font-size: 8.96341px;
+    line-height: 11px;
+    padding: 5px 14px;
+
+    gap: 8px;
+  }
+  .arrowContainer svg {
+    width: 10px;
+    height: 6px;
+  }
+}

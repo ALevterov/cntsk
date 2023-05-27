@@ -27,3 +27,11 @@
   background: rgba(125, 255, 177, 1);
   cursor: pointer;
 }
+
+@media screen and (max-width: 1440px) {
+  .btn {
+    padding: 14.5px 32px;
+    font-size: 11.998px;
+    line-height: 15px;
+  }
+}

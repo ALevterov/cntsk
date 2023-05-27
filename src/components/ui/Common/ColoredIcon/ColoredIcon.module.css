@@ -7,3 +7,10 @@
 .colored:hover path {
   fill: var(--light-green);
 }
+
+@media screen and (max-width: 1440px) {
+  .colored svg {
+    width: 21px;
+    height: 21px;
+  }
+}

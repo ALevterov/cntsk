@@ -23,3 +23,13 @@
   color: #ffffff;
   z-index: 2;
 }
+@media screen and (max-width: 1440px) {
+  .btn,
+  .btn svg {
+    width: 146px;
+    height: 41px;
+  }
+  .btn span {
+    font-size: 14.9426px;
+  }
+}

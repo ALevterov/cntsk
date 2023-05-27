@@ -53,7 +53,6 @@ const Slider = () => {
         nextEl: '.slider-next-btn',
         prevEl: null,
       }}
-      // navigation={true}
       pagination={pagination}
       modules={[Pagination, Navigation]}
       className={styles.swiper}

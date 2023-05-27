@@ -6,15 +6,16 @@
 .slide {
   background-color: #248c4e;
   position: relative;
+  height: 100%;
 }
 .sliderInner {
   padding: 67px 140px 113px 80px;
+  height: 100%;
 }
 .slideBgIndex {
   font-style: italic;
   font-weight: 1000;
   font-size: 769px;
-  /* line-height: 40px; */
   line-height: 500px;
 
   color: #228248;
@@ -32,4 +33,25 @@
   line-height: 40px;
 
   color: #ffffff;
+  max-height: 320px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media screen and (max-width: 1440px) {
+  .slideText {
+    font-size: 22px;
+    line-height: 30px;
+    position: relative;
+    max-height: 240px;
+  }
+  .slideBgIndex {
+    font-size: 576.655px;
+    position: absolute;
+    top: -66px;
+    left: -70px;
+  }
+  .sliderInner {
+    padding: 50px 104px 85px 61px;
+  }
 }

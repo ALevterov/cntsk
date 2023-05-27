@@ -13,7 +13,6 @@ const items: string[] = [
   'инновационные подходы коммуникации и PR',
 ]
 const FirstSection = () => {
-  const [scrollPos, setScrollPos] = useState(0)
   const sectionRef = useRef<HTMLDivElement | null>(null)
   useEffect(() => {
     window.addEventListener('scroll', () => {
@@ -28,14 +27,7 @@ const FirstSection = () => {
     <div className={styles.section} ref={sectionRef}>
       <Header />
       <div className={[global.container, styles.centralContainer].join(' ')}>
-        <div
-          style={{
-            width: 0,
-            height: 0,
-            backgroundColor: 'transparent',
-            visibility: 'hidden',
-          }}
-        ></div>
+        <div className={styles.hiddenBlock}></div>
         <AdditionalText>
           центр новых технологий социальных коммуникаций
         </AdditionalText>

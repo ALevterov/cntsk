@@ -44,3 +44,11 @@
   justify-content: center;
   align-items: center;
 }
+@media screen and (max-width: 1440px) {
+  .mainText {
+    font-size: 222.055px;
+  }
+  .vertical {
+    left: calc(50% - 140px);
+  }
+}

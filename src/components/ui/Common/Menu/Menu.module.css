@@ -32,12 +32,13 @@
 }
 .headerCenter {
   position: absolute;
-  left: calc(50% - 65px);
+  left: 50%;
   font-style: normal;
   font-weight: 600;
   font-size: 20px;
-  line-height: 25px;
+  line-height: 120%;
   text-transform: uppercase;
+  transform: translateX(-50%);
 
   color: #ffffff;
 }
@@ -73,11 +74,12 @@
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
-  line-height: 50px;
+  line-height: 250%;
 
   color: #ffffff;
   text-decoration: none;
   outline: none;
+  white-space: nowrap;
 }
 @media screen and (max-width: 1800px) {
   .menuList {
@@ -87,5 +89,35 @@
 @media screen and (max-width: 1700px) {
   .headerRight {
     gap: 140px;
+  }
+}
+
+@media screen and (max-width: 1550px) {
+  .menuList {
+    gap: 90px;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .headerLogo,
+  .headerLogo svg {
+    width: 99px;
+    height: 32px;
+  }
+  .headerCenter {
+    font-size: 16px;
+  }
+  .social {
+    gap: 37px;
+  }
+  .menuListItem {
+    font-size: 16px;
+  }
+
+  .wrapper {
+    padding: 73px 0;
+  }
+  .header {
+    margin-bottom: 67px;
   }
 }

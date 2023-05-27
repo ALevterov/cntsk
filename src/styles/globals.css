@@ -80,3 +80,23 @@ div.swiper-button-next {
 .os-scrollbar .os-scrollbar-track:hover {
   background: #dadada;
 }
+@media screen and (max-width: 1440px) {
+  .swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
+    bottom: 33px;
+    text-align: left;
+    padding-left: 61px;
+  }
+  .slider-next-btn svg,
+  .slider-next-btn {
+    width: 23px;
+    height: 17px;
+  }
+  span.swiper-pagination-bullet {
+    height: 3px;
+    width: 16px;
+  }
+  span.swiper-pagination-bullet-active {
+    height: 3px;
+    width: 42px;
+  }
+}

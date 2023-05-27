@@ -7,7 +7,6 @@ import TgIcon from '@/icons/TgIcon'
 import FBIcon from '@/icons/FBIcon'
 import VKIcon from '@/icons/VKIcon'
 import ColoredIcon from '../ColoredIcon/ColoredIcon'
-import MenuButton from '../MenuButton/MenuButton'
 import HeaderButton from '../Header/HeaderButton'
 import Link from 'next/link'
 const Menu = ({ opened }: { opened: boolean }) => {

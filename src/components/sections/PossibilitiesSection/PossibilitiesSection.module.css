@@ -40,3 +40,39 @@ div.card7 {
 div.card8 {
   height: 0px;
 }
+
+@media screen and (max-width: 1440px) {
+  .section {
+    padding-bottom: 115px;
+  }
+  .cardsWrapper {
+    gap: 25px;
+  }
+  .cardContainer {
+    gap: 37px;
+  }
+  div.card1 {
+    height: 240px;
+  }
+  div.card2 {
+    height: 210px;
+  }
+  div.card3 {
+    height: 180px;
+  }
+  div.card4 {
+    height: 197px;
+  }
+  div.card5 {
+    height: 240px;
+  }
+  div.card6 {
+    height: 0px;
+  }
+  div.card7 {
+    height: 170px;
+  }
+  div.card8 {
+    height: 0px;
+  }
+}

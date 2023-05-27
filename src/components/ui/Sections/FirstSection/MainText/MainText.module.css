@@ -5,3 +5,11 @@
   line-height: 96.3%;
   color: #fff;
 }
+
+@media screen and (max-width: 1440px) {
+  .text {
+    margin-top: 113px;
+    font-size: 107.053px;
+    line-height: 96.3%;
+  }
+}

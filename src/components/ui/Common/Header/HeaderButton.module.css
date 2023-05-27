@@ -22,3 +22,11 @@
   color: #248c4e;
   /* border: 1px solid #248c4e; */
 }
+
+@media screen and (max-width: 1440px) {
+  .btn {
+    padding: 16px 48px;
+    font-size: 11.998px;
+    line-height: 15px;
+  }
+}

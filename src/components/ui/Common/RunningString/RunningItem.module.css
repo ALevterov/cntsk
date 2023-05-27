@@ -21,5 +21,15 @@
   height: 20px;
   background-color: #fff;
   right: 0;
-  top: calc(50% - 10px);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@media screen and (max-width: 1440px) {
+  .item {
+    font-size: 14.9426px;
+  }
+  .item::after {
+    height: 15px;
+  }
 }

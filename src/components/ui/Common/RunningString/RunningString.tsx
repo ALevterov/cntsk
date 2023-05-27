@@ -9,14 +9,6 @@ const RunningString = ({
   items: string[]
   containerClassName?: string
 }) => {
-  // const [visibility, setVisibility] = useState<string | undefined>(
-  //   'translate(120%, 0)'
-  // )
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setVisibility(undefined)
-  //   }, 6000)
-  // }, [])
   return (
     <div className={[styles.container, containerClassName].join(' ')}>
       <div className={styles.wrapper}>
@@ -25,12 +17,7 @@ const RunningString = ({
             <RunningItem text={item} key={index} />
           ))}
         </div>
-        <div
-          className={styles.innerClone}
-          // style={{
-          //   transform: visibility,
-          // }}
-        >
+        <div className={styles.innerClone}>
           {items.map((item, index) => (
             <RunningItem text={item} key={index} />
           ))}

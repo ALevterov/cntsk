@@ -9,3 +9,9 @@
   align-items: center;
   gap: 50px;
 }
+
+@media screen and (max-width: 1440px) {
+  .headerRight {
+    gap: 37px;
+  }
+}
