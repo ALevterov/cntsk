@@ -75,3 +75,36 @@
 .link svg {
   transform: rotate(90deg);
 }
+
+@media screen and (max-width: 1440px) {
+  .container {
+    padding: 14px 14px 14px 23px;
+    gap: 11px;
+    max-width: 313px;
+    max-height: 230px;
+  }
+  .title svg,
+  .title {
+    width: 99px;
+    height: 41px;
+  }
+  .title {
+    margin-bottom: 6px;
+  }
+  .text {
+    font-size: 12px;
+    line-height: 17px;
+    max-width: 242px;
+  }
+  .link {
+    font-size: 9px;
+    line-height: 11px;
+    padding: 6px;
+
+    border-radius: 6px;
+  }
+  .link svg {
+    width: 10px;
+    height: 6px;
+  }
+}

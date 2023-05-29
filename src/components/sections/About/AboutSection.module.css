@@ -89,3 +89,33 @@
   writing-mode: vertical-lr;
   z-index: 2;
 }
+
+@media screen and (max-width: 1440px) {
+  .text {
+    font-size: 18.75px;
+    line-height: 30px;
+    max-width: 501px;
+
+    margin-bottom: 125px;
+  }
+  .contentRight {
+    padding: 104px 0;
+  }
+  .mainText {
+    font-size: 239.674px;
+    left: -88px;
+    top: -40px;
+  }
+  .cardTitle {
+    margin-bottom: 20px;
+  }
+  .cardTitle svg,
+  .cardTitle {
+    width: 166px;
+    height: 31px;
+  }
+  .contentLeft {
+    gap: 52px;
+    padding: 104px;
+  }
+}

@@ -11,3 +11,13 @@
   margin-top: 80px;
   align-items: stretch;
 }
+@media screen and (max-width: 1440px) {
+  .section {
+    padding-top: 75px;
+    padding-bottom: 108px;
+  }
+  .cardsContainer {
+    column-gap: 29px;
+    margin-top: 60px;
+  }
+}

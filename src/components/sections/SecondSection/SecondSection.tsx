@@ -8,6 +8,7 @@ import img4 from '@/assets/secondSection/4.png'
 import RunningStringSecond from '@/components/ui/Common/RunningStringSecond/RunningStringSecond'
 import MainText from '@/components/ui/Sections/SecondSection/MainText/MainTextSecond'
 import CardAdvantages from '@/components/ui/Sections/SecondSection/CardAdvantages/CardAdvantages'
+import Header from '@/components/ui/Common/Header/Header'
 // import CardAdvantages from '@/components/ui/SecondSection/CardAdvantages/CardAdvantages'
 // import RunningStringSecond from '@/components/ui/RunningStringSecond/RunningStringSecond'
 
@@ -40,6 +41,7 @@ const SecondSection = () => {
           <h1 className={styles.mainText}>ЦНТСК</h1>
           <RunningStringSecond />
         </div>
+        <Header className={styles.mobileHeader} />
         <MainText>
           <p>
             <strong>

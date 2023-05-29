@@ -1,5 +1,4 @@
 .section {
-  /* margin-top: 100px; */
   margin-bottom: 190px;
 }
 .cardsContainer {
@@ -8,4 +7,14 @@
   gap: 40px;
   grid-template-columns: repeat(3, 1fr);
   align-items: flex-start;
+}
+
+@media screen and (max-width: 1440px) {
+  .section {
+    margin-bottom: 143px;
+  }
+  .cardsContainer {
+    margin-top: 65px;
+    gap: 27px;
+  }
 }

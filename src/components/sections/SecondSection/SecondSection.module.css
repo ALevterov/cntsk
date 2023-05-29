@@ -44,11 +44,41 @@
   justify-content: center;
   align-items: center;
 }
+.mobileHeader {
+  display: none;
+}
 @media screen and (max-width: 1440px) {
   .mainText {
     font-size: 222.055px;
   }
   .vertical {
     left: calc(50% - 140px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .section {
+    padding-top: 60px;
+    /* padding-bottom: 40px; */
+    height: auto;
+  }
+  .container {
+    flex-direction: column;
+  }
+  .vertical {
+    display: none;
+  }
+  .cardsContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    overflow-y: scroll;
+    padding-top: 37px;
+    padding-bottom: 40px;
+  }
+  .mobileHeader {
+    display: flex;
+  }
+  .mobileHeader path {
+    fill: var(--medium-green);
   }
 }

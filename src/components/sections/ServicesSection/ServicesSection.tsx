@@ -1,7 +1,7 @@
 import BlackTitle from '@/components/ui/Common/BlackTitle/BlackTitle'
 import styles from './ServicesSection.module.css'
 import global from '@/styles/global.module.css'
-import { useCallback, useEffect, useState } from 'react'
+import { ChangeEventHandler, useCallback, useEffect, useState } from 'react'
 import OrderBtn from '@/components/ui/Common/OrderBtn/OrderBtn'
 import useDebounce from '@/hooks/useDebounce'
 import findServicesByString from '../../../helpers/findServicesByString'
@@ -55,7 +55,7 @@ const ServicesSection = () => {
     }
   }, [fieldActive])
 
-  const handleChangeInput = useCallback((e: InputEvent) => {
+  const handleChangeInput = useCallback((e: any): any => {
     setInput(e.target.value)
   }, [])
   const handleSelectFocus = useCallback(() => {
@@ -97,11 +97,19 @@ const ServicesSection = () => {
           onClick={handleInputFocus}
         >
           <div className={styles.inputWrapper}>
+            <textarea
+              // type='text'
+              value={input}
+              onChange={handleChangeInput}
+              className={[styles.input, styles.textarea].join(' ')}
+              placeholder='Расскажите, что Вам необходимо. Оставьте заявку, и мы поможем вам реализовать задачу.'
+              onFocus={handleInputFocus}
+            />
             <input
               type='text'
               value={input}
               onChange={handleChangeInput}
-              className={styles.input}
+              className={[styles.input, styles.desktopInput].join(' ')}
               placeholder='Расскажите, что Вам необходимо. Оставьте заявку, и мы поможем вам реализовать задачу.'
               onFocus={handleInputFocus}
             />
@@ -109,12 +117,13 @@ const ServicesSection = () => {
           </div>
           <div className={styles.inputWrapperBottom}>
             <div className={styles.solveText}>наше решение для вас:</div>
-            <div className={styles.solveItems}>
-              {services.length &&
-                services.map(service => (
+            {services.length !== 0 && (
+              <div className={styles.solveItems}>
+                {services.map(service => (
                   <OrderFindedItem key={service}>{service}</OrderFindedItem>
                 ))}
-            </div>
+              </div>
+            )}
             <OrderBtn active={services.length !== 0 && fieldActive === 'input'}>
               Заказать
             </OrderBtn>

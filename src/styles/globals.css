@@ -100,3 +100,22 @@ div.swiper-button-next {
     width: 42px;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .slider-next-btn svg,
+  .slider-next-btn {
+    width: 29px;
+    height: 21.5px;
+  }
+  .slider-next-btn {
+    right: 36px;
+  }
+  .swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
+    bottom: 37px;
+    text-align: left;
+    padding-left: 25px;
+  }
+  div.swiper-slide {
+    margin-left: -1px;
+  }
+}

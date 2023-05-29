@@ -11,3 +11,14 @@
 
   justify-content: center;
 }
+@media screen and (max-width: 1440px) {
+  .section {
+    padding-top: 75px;
+    padding-bottom: 145px;
+  }
+  .cardsContainer {
+    margin-top: 87px;
+    column-gap: 30px;
+    row-gap: 30px;
+  }
+}

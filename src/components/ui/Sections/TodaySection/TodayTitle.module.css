@@ -26,3 +26,10 @@
     bottom: -5px;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .title {
+    font-size: 69.7222px;
+    line-height: 96.3%;
+  }
+}

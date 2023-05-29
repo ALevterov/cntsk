@@ -67,3 +67,27 @@
 .line .pointActive {
   background-color: var(--medium-green);
 }
+
+@media screen and (max-width: 1440px) {
+  .line {
+    width: 640px;
+  }
+  .line div {
+    width: 18px;
+    height: 18px;
+    transform: translateY(-6px);
+  }
+  .years {
+    width: unset;
+    gap: 55px;
+    position: relative;
+    left: -10px;
+  }
+  .years div {
+    font-size: 12px;
+    line-height: 17px;
+  }
+  .line .progressLine {
+    transform: translateY(-9px);
+  }
+}

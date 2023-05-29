@@ -17,3 +17,13 @@
     margin-top: 218px;
   }
 }
+@media screen and (max-width: 1440px) {
+  .text {
+    font-size: 20px;
+    line-height: 132.8%;
+
+    margin-top: 0;
+
+    max-width: 115px;
+  }
+}

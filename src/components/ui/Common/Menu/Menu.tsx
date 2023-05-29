@@ -9,7 +9,14 @@ import VKIcon from '@/icons/VKIcon'
 import ColoredIcon from '../ColoredIcon/ColoredIcon'
 import HeaderButton from '../Header/HeaderButton'
 import Link from 'next/link'
-const Menu = ({ opened }: { opened: boolean }) => {
+import MenuCloseIcon from '@/icons/menuCloseIcon'
+const Menu = ({
+  opened,
+  closeMenu,
+}: {
+  opened: boolean
+  closeMenu: () => void
+}) => {
   const classes = [styles.container]
   if (opened) {
     classes.push(styles.opened)
@@ -21,9 +28,11 @@ const Menu = ({ opened }: { opened: boolean }) => {
           <div className={styles.headerLogo}>
             <LogoIcon />
           </div>
-          <div className={styles.headerCenter}>Меню сайта</div>
+          <div className={[styles.headerCenter, styles.desktop].join(' ')}>
+            Меню сайта
+          </div>
           <div className={styles.headerRight}>
-            <div className={styles.intl}>
+            <div className={[styles.intl, styles.desktop].join(' ')}>
               <IntlButtons isActive='Ru' />
             </div>
             <div className={styles.social}>
@@ -42,7 +51,17 @@ const Menu = ({ opened }: { opened: boolean }) => {
             </div>
           </div>
         </div>
-
+        <div className={[styles.mobile, styles.mobileHeader].join(' ')}>
+          <div className={styles.menuText}>Меню сайта</div>
+          <div className={styles.mobileHeaderRight}>
+            <div className={styles.intl}>
+              <IntlButtons isActive='Ru' />
+            </div>
+            <div className={styles.btnCloseWrapper} onClick={closeMenu}>
+              <MenuCloseIcon />
+            </div>
+          </div>
+        </div>
         <div className={styles.menuBottom}>
           <div className={styles.menuList}>
             <div className={styles.menuListBlock}>

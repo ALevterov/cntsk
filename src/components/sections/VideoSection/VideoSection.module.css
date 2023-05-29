@@ -68,3 +68,26 @@
     padding: 36px 55px;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .item {
+    width: 100%;
+  }
+  .itemContent {
+    padding: 25px 28px;
+  }
+  .itemTop {
+    font-size: 15px;
+    line-height: 20px;
+  }
+  .itemBottom {
+    font-size: 10px;
+    line-height: 15px;
+  }
+  .runningContainer {
+    display: block;
+  }
+}

@@ -24,6 +24,9 @@ export default function Home() {
   const firstHalfRef = useRef<HTMLDivElement | null>(null)
   const secondHalfRef = useRef<HTMLDivElement | null>(null)
 
+  const closeMenu = useCallback(() => {
+    setMenuOpen(false)
+  }, [])
   useEffect(() => {
     window.addEventListener('scroll', () => {
       const vh = window.innerHeight / 100
@@ -56,19 +59,19 @@ export default function Home() {
   }, [menuOpen])
 
   return (
-    <>
+    <div className={[!menuOpen ? styles.noOverflow : ''].join(' ')}>
       <div className={menuIconClasses.join(' ')} onClick={toggleMenu}>
         <MenuButton />
       </div>
       <div className={styles.firstHalfWrapper} ref={firstHalfRef}>
-        <Menu opened={menuOpen} />
+        <Menu opened={menuOpen} closeMenu={closeMenu} />
         <FirstSection />
         <div className={styles.contentContainer} ref={sectionRef}>
           <SecondSection />
           <TodaySection />
           <VideoSection />
           <ServicesSection />
-          <PossibilitiesSection />с
+          <PossibilitiesSection />
         </div>
       </div>
       <div className={styles.secondHalfWrapper} ref={secondHalfRef}>
@@ -78,6 +81,6 @@ export default function Home() {
         <ManagmentSection />
         <Footer />
       </div>
-    </>
+    </div>
   )
 }

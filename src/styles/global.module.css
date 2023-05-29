@@ -9,3 +9,9 @@
     width: calc(100vw - 220px);
   }
 }
+@media screen and (max-width: 768px) {
+  .container {
+    margin: 0 28px;
+    width: calc(100vw - 56px);
+  }
+}

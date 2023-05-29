@@ -29,3 +29,63 @@
   color: var(--card-text);
   white-space: nowrap;
 }
+
+@media screen and (max-width: 1440px) {
+  .container {
+    width: 180px;
+    height: 180px;
+
+    border-radius: 22px;
+  }
+  .title {
+    font-size: 11.25px;
+    line-height: 30px;
+
+    bottom: 12px;
+  }
+  .container:first-child svg,
+  .container:nth-child(2) svg {
+    width: 60px;
+    height: 60px;
+  }
+  .container:nth-child(3) svg {
+    width: 108px;
+    height: 35px;
+  }
+  .container:nth-child(4) svg {
+    width: 43px;
+    height: 45px;
+  }
+  .container:nth-child(5) svg {
+    width: 58px;
+    height: 60px;
+  }
+  .container:nth-child(6) svg {
+    width: 119px;
+    height: 22px;
+  }
+  .container:nth-child(7) svg {
+    width: 104px;
+    height: 28px;
+  }
+  .container:nth-child(8) svg {
+    width: 100px;
+    height: 40px;
+  }
+  .container:nth-child(9) svg {
+    width: 108px;
+    height: 25px;
+  }
+  .container:nth-child(10) svg {
+    width: 145px;
+    height: 24px;
+  }
+  .container:nth-child(11) svg {
+    width: 60px;
+    height: 60px;
+  }
+  .container:nth-child(12) svg {
+    width: 98px;
+    height: 49px;
+  }
+}

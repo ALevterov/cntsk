@@ -16,23 +16,14 @@
 .inner,
 .innerClone {
   transform: translate(100%, 0);
-  /* width: 100%; */
-
   display: flex;
   flex-direction: row;
   align-items: center;
-  /* overflow: hidden; */
 }
-/* .innerClone {
-  transform: translate(100%, 0);
-} */
-/* .innerСlone {
-  transform: translate(120%, 0);
-} */
+
 .inner {
   animation: marquee 12s infinite linear forwards;
   position: absolute;
-  /* right: 0; */
 }
 .innerClone {
   animation: 12s marquee 6s infinite linear forwards;
@@ -46,5 +37,10 @@
   }
   100% {
     transform: translateX(100%);
+  }
+}
+@media screen and (max-width: 768px) {
+  .container {
+    display: none;
   }
 }

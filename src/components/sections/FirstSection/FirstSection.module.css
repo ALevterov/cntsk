@@ -17,8 +17,8 @@
 .menuIcon {
   position: fixed;
   top: 0;
-  left: calc(50% - 97.5px);
-  transform: translateY(0);
+  left: 50%;
+  transform: translateY(0) translateX(-50%);
   transition: 0.3s transform;
   will-change: transform;
   z-index: 99999;
@@ -42,5 +42,24 @@
   .centralContainer {
     height: auto;
     justify-content: baseline;
+  }
+}
+@media screen and (max-width: 768px) {
+  .section {
+    padding-top: 60px;
+  }
+  .centralContainer {
+    position: absolute;
+    bottom: 112px;
+  }
+  .menuIcon {
+    top: unset;
+    bottom: 0;
+  }
+  .menuIcon svg {
+    transform: rotate(180deg);
+  }
+  .menuIcon.opened {
+    display: none;
   }
 }

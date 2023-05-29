@@ -38,7 +38,6 @@ const ManagmentCard = ({
               isOpened ? styles.contentOpened : '',
             ].join(' ')}
             ref={scrollRef}
-            // style={{ height: '120px' }}
           >
             {children}
           </div>

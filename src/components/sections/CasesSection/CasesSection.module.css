@@ -34,7 +34,7 @@
   top: -19px;
   height: 8px;
   margin: 0 155px;
-  width: 5758px;
+  width: 5520px;
   background-color: var(--medium-green);
 }
 .cardsBottomContainer {
@@ -42,4 +42,26 @@
   position: relative;
   top: -39px;
   left: 285px;
+}
+
+@media screen and (max-width: 1440px) {
+  .cardsTopContainer,
+  .cardsBottomContainer {
+    gap: 177px;
+  }
+  .cardsBottomContainer {
+    left: 217px;
+  }
+
+  .cardsBottomContainer {
+    top: -34px;
+  }
+  .cardsTopContainer {
+    position: relative;
+    top: -3px;
+  }
+  .mainLine {
+    margin: 0 135px;
+    width: 4300px;
+  }
 }

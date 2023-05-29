@@ -81,6 +81,9 @@
   outline: none;
   white-space: nowrap;
 }
+.mobile {
+  display: none;
+}
 @media screen and (max-width: 1800px) {
   .menuList {
     gap: 110px;
@@ -119,5 +122,75 @@
   }
   .header {
     margin-bottom: 67px;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .container.opened {
+    height: 100vh;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    transform: translateY(100vh);
+  }
+  .desktop {
+    display: none;
+  }
+  .mobile {
+    display: block;
+  }
+  .header {
+    margin-bottom: 40px;
+  }
+  .menuText {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 25px;
+    text-transform: uppercase;
+
+    color: #ffffff;
+  }
+  .mobileHeader {
+    display: flex;
+    justify-content: space-between;
+    gap: 53px;
+    align-items: center;
+
+    margin-bottom: 46px;
+  }
+  .mobileHeaderRight {
+    display: flex;
+    gap: 53px;
+    align-items: center;
+  }
+  .intl > * {
+    position: relative;
+    top: -4px;
+  }
+  .menuBottom {
+    flex-direction: column;
+    gap: 47px;
+  }
+  .menuList {
+    flex-direction: column;
+    gap: 0;
+  }
+  .menuListBlock {
+    align-items: center;
+  }
+  .menuListItem {
+    text-align: center;
+    font-size: 20px;
+    line-height: 50px;
+  }
+  .btnCloseWrapper {
+    cursor: pointer;
+  }
+  .wrapper {
+    padding-top: 60px;
+    padding-bottom: 52px;
   }
 }

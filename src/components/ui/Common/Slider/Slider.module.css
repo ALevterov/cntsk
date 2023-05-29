@@ -55,3 +55,19 @@
     padding: 50px 104px 85px 61px;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .sliderInner {
+    padding: 50px 25px 104px 28px;
+  }
+  .slideText {
+    font-size: 20px;
+    line-height: 30px;
+    max-height: 420px;
+  }
+  .slideBgIndex {
+    left: 50%;
+    transform: translateX(-50%);
+    top: -6px;
+  }
+}

@@ -22,6 +22,7 @@
   -webkit-text-stroke: 3px transparent;
   -webkit-background-clip: text;
   background-clip: text;
+  font-style: italic;
 }
 .bottomText {
   font-style: normal;
@@ -50,5 +51,41 @@
   .bottomText {
     font-size: 32.592px;
     line-height: 38px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .section {
+    padding-bottom: 0;
+    padding-left: 0;
+  }
+  .containerTop {
+    flex-direction: column;
+    margin-bottom: 60px;
+  }
+  .bordered {
+    display: inline-block;
+    width: 240px;
+    height: 70px;
+    /* bottom: -5px; */
+  }
+  .topLeft {
+    margin-top: 70px;
+    margin-bottom: 63px;
+  }
+  .slider {
+    width: 100vw;
+    height: 574px;
+  }
+  .containerBottom {
+    padding: 0 25px;
+    margin-bottom: 60px;
+    display: flex;
+    justify-content: center;
+  }
+  .bottomText {
+    font-size: 25px;
+    line-height: 38px;
+    max-width: 325px;
   }
 }

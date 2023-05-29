@@ -5,3 +5,9 @@
 
   color: transparent;
 }
+@media screen and (max-width: 768px) {
+  .bordered {
+    font-size: 46px;
+    line-height: 96.3%;
+  }
+}

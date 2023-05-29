@@ -13,3 +13,11 @@
     line-height: 96.3%;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .text {
+    font-size: 38.3596px;
+    line-height: 96.3%;
+    margin-top: 37px;
+  }
+}

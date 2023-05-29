@@ -14,11 +14,11 @@ const DraggableLine = ({
   setOffsetX: Dispatch<SetStateAction<null | number>>
 }) => {
   const initialPoint = useRef<null | number>(null)
+  const whenClickYearFirstThanDrag = useRef<null | number>(null)
   const mainLineRef = useRef<null | HTMLDivElement>(null)
   const pointRef = useRef<null | HTMLDivElement>(null)
   const lastPoint = useRef<null | HTMLDivElement>(null)
   const secondPoint = useRef<null | HTMLDivElement>(null)
-  // const [offsetX, setOffsetX] = useState<null | number>(null)
   const [constraintRight, setConstraintRight] = useState<number>(906)
 
   useEffect(() => {
@@ -26,13 +26,20 @@ const DraggableLine = ({
       setConstraintRight(lastPoint.current.offsetLeft)
     }
     if (secondPoint.current) {
+      console.log(secondPoint.current.offsetLeft)
+
       animate('#draggable-point', {
         x: [offsetX, secondPoint.current.offsetLeft],
       })
       setOffsetX(secondPoint.current.offsetLeft)
     }
     if (pointRef.current) {
-      pointRef.current.style.top = '-9px'
+      if (window.innerWidth > 1440) {
+        pointRef.current.style.top = '-9px'
+      }
+      if (window.innerWidth <= 1440) {
+        pointRef.current.style.top = '-6px'
+      }
     }
   }, [])
 
@@ -57,8 +64,13 @@ const DraggableLine = ({
 
   const dragHandler = (data: any, info: any) => {
     if (initialPoint.current === null && secondPoint.current) {
-      initialPoint.current =
-        info.point.x - info.offset.x - secondPoint.current.offsetLeft
+      if (whenClickYearFirstThanDrag.current !== null) {
+        initialPoint.current =
+          info.point.x - info.offset.x - whenClickYearFirstThanDrag.current
+      } else {
+        initialPoint.current =
+          info.point.x - info.offset.x - secondPoint.current.offsetLeft
+      }
       if (info.point.x - initialPoint.current >= 0) {
         setOffsetX(info.point.x - initialPoint.current)
       }
@@ -84,7 +96,26 @@ const DraggableLine = ({
   }
   const handleYearClick = (e: ClickEvent) => {
     const endPoint: number = e.target.offsetLeft
-    animate('#draggable-point', { x: [offsetX, endPoint] })
+
+    if (initialPoint.current === null) {
+      whenClickYearFirstThanDrag.current = endPoint
+    }
+
+    if (window.innerWidth <= 1440) {
+      if (endPoint > 267) {
+        animate('#draggable-point', { x: [offsetX, endPoint + 1] })
+      } else if (endPoint === 267) {
+        animate('#draggable-point', { x: [offsetX, endPoint + 0.5] })
+      } else if (endPoint < 267 && endPoint > 0) {
+        animate('#draggable-point', { x: [offsetX, endPoint] })
+      } else if (endPoint < 0) {
+        animate('#draggable-point', { x: [offsetX, -0.5] })
+      }
+      console.log(endPoint)
+    }
+    if (window.innerWidth > 1440) {
+      animate('#draggable-point', { x: [offsetX, endPoint] })
+    }
     if (endPoint >= 0) {
       setOffsetX(endPoint)
     }
@@ -101,7 +132,7 @@ const DraggableLine = ({
     })
   }
   return (
-    <div>
+    <div className={styles.container}>
       <div className={styles.line} ref={mainLineRef}>
         <div
           onClick={handleYearClick}

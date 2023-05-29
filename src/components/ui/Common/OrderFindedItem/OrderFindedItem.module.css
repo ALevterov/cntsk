@@ -14,3 +14,10 @@
   border-radius: 15px;
   background-color: transparent;
 }
+
+@media screen and (max-width: 1440px) {
+  .container {
+    font-size: 16px;
+    padding: 14px 20px;
+  }
+}
