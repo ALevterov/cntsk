@@ -5,11 +5,13 @@ type TPosition = 'center' | 'left' | 'right'
 const SimpleTitle = ({
   children,
   position,
+  className,
 }: {
   children: React.ReactNode
   position: TPosition
+  className?: string
 }) => {
-  const classes = [styles.h1]
+  const classes = [styles.h1, className ? className : '']
   if (position === 'center') {
     classes.push(styles.title)
   }

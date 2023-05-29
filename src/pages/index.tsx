@@ -23,29 +23,48 @@ export default function Home() {
   const sectionRef = useRef<HTMLDivElement | null>(null)
   const firstHalfRef = useRef<HTMLDivElement | null>(null)
   const secondHalfRef = useRef<HTMLDivElement | null>(null)
+  const scrollPos = useRef<number | null>(null)
+  const scrollPosSaved = useRef<number | null>(null)
 
   const closeMenu = useCallback(() => {
     setMenuOpen(false)
   }, [])
+
+  const scrollListener = useCallback(() => {
+    scrollPos.current = window.scrollY
+    const vh = window.innerHeight / 100
+    if (sectionRef.current) {
+      if (window.scrollY <= window.innerHeight + 600) {
+        sectionRef.current.style.marginTop = `calc(${window.scrollY}px)`
+      }
+    }
+    if (firstHalfRef.current && secondHalfRef.current) {
+      const dif = window.scrollY - firstHalfRef.current.clientHeight
+      if (
+        window.scrollY >= firstHalfRef.current.clientHeight &&
+        window.scrollY <= firstHalfRef.current.clientHeight + 180 * vh
+      ) {
+        firstHalfRef.current.style.transform = `translateY(${-1 * dif})`
+        secondHalfRef.current.style.marginTop = `calc(${window.scrollY}px)`
+      }
+    }
+  }, [])
   useEffect(() => {
-    window.addEventListener('scroll', () => {
-      const vh = window.innerHeight / 100
-      if (sectionRef.current) {
-        if (window.scrollY <= window.innerHeight + 600) {
-          sectionRef.current.style.marginTop = `calc(${window.scrollY}px)`
-        }
+    if (window.innerWidth > 768) {
+      return
+    }
+    if (menuOpen) {
+      document.body.classList.add('no-overflow')
+      scrollPosSaved.current = scrollPos.current
+    } else {
+      document.body.classList.remove('no-overflow')
+      if (scrollPosSaved.current) {
+        window.scrollTo(0, scrollPosSaved.current)
       }
-      if (firstHalfRef.current && secondHalfRef.current) {
-        const dif = window.scrollY - firstHalfRef.current.clientHeight
-        if (
-          window.scrollY >= firstHalfRef.current.clientHeight &&
-          window.scrollY <= firstHalfRef.current.clientHeight + 180 * vh
-        ) {
-          firstHalfRef.current.style.transform = `translateY(${-1 * dif})`
-          secondHalfRef.current.style.marginTop = `calc(${window.scrollY}px)`
-        }
-      }
-    })
+    }
+  }, [menuOpen])
+  useEffect(() => {
+    window.addEventListener('scroll', scrollListener)
     if (secondHalfRef.current && firstHalfRef.current) {
       secondHalfRef.current.style.marginTop = `calc(${firstHalfRef.current.clientHeight}px + 120vh)`
     }
@@ -59,7 +78,7 @@ export default function Home() {
   }, [menuOpen])
 
   return (
-    <div className={[!menuOpen ? styles.noOverflow : ''].join(' ')}>
+    <>
       <div className={menuIconClasses.join(' ')} onClick={toggleMenu}>
         <MenuButton />
       </div>
@@ -81,6 +100,6 @@ export default function Home() {
         <ManagmentSection />
         <Footer />
       </div>
-    </div>
+    </>
   )
 }

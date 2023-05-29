@@ -89,3 +89,8 @@
     height: 49px;
   }
 }
+@media screen and (max-width: 768px) {
+  .title {
+    letter-spacing: normal;
+  }
+}

@@ -6,12 +6,10 @@ import FBIcon from '@/icons/FBIcon'
 import TgIcon from '@/icons/TgIcon'
 import MainLogo from '../MainLogo'
 import VKIcon from '@/icons/VKIcon'
-const Header = ({ className }: { className: string }) => {
+const Header = ({ className }: { className?: string }) => {
   return (
-    <div className={global.container}>
-      <div
-        className={[styles.headerWrapper, className ? className : ''].join(' ')}
-      >
+    <div className={[global.container, className].join(' ')}>
+      <div className={[styles.headerWrapper].join(' ')}>
         <div className={styles.headerLeft}>
           <MainLogo />
         </div>

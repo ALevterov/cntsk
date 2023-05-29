@@ -98,7 +98,6 @@ const ServicesSection = () => {
         >
           <div className={styles.inputWrapper}>
             <textarea
-              // type='text'
               value={input}
               onChange={handleChangeInput}
               className={[styles.input, styles.textarea].join(' ')}
@@ -139,7 +138,9 @@ const ServicesSection = () => {
           <h3 className={styles.selectTitle}>
             Или выберите интересующие вас услуги из списка
           </h3>
-          <div className={styles.selectItemsContainer}>
+          <div
+            className={[styles.selectItemsContainer, styles.desktop].join(' ')}
+          >
             {selectItems.map(item => (
               <SelectItem key={item} onChangeSelected={handleChangeSelected}>
                 {item}

@@ -14,7 +14,18 @@ import OrbitLogo from '@/icons/OrbitLogo'
 import GShockLogo from '@/icons/GShockLogo'
 import LGLogo from '@/icons/LGLogo'
 import GQLogo from '@/icons/GQLogo'
+import ScrollableBlock from '@/components/ui/Sections/BrandSection/ScrollableBlock/ScrollableBlock'
+import { useEffect, useState } from 'react'
+import SecondSberLogo from '@/icons/SecondSberLogo'
 const BrandSection = () => {
+  const [carouselVisible, setCarouselVisible] = useState(true)
+  useEffect(() => {
+    if (window.innerWidth > 768) {
+      setCarouselVisible(false)
+    } else {
+      setCarouselVisible(true)
+    }
+  }, [])
   return (
     <div className={styles.section}>
       <div className={global.container}>
@@ -61,6 +72,60 @@ const BrandSection = () => {
             <GQLogo />
           </BrandCard>
         </div>
+
+        {carouselVisible && (
+          <div className={styles.mobileCarousel}>
+            <ScrollableBlock
+              baseVelocity={-5}
+              nodesArray={[
+                <BrandCard title='/Вконтакте' key={'/Вконтакте'}>
+                  <VKLogo />
+                </BrandCard>,
+                <BrandCard title='/Сбер' key={'/Сбер'}>
+                  <SecondSberLogo />
+                </BrandCard>,
+                <BrandCard title='/Телеканал ТНТ' key={'/Телеканал ТНТ'}>
+                  <TntLogo />
+                </BrandCard>,
+                <BrandCard title='/Золотое яблоко' key={'/Золотое яблоко'}>
+                  <GoldAppleLogo />
+                </BrandCard>,
+                <BrandCard title='/ДоДо пицца' key={'/ДоДо пицца'}>
+                  <DodoLogo />
+                </BrandCard>,
+                <BrandCard
+                  title='/Metro Cash and Carry'
+                  key={'/Metro Cash and Carry'}
+                >
+                  <MetroLogo />
+                </BrandCard>,
+              ]}
+            />
+            <ScrollableBlock
+              baseVelocity={5}
+              nodesArray={[
+                <BrandCard title='/Nivea' key='/Nivea'>
+                  <NiveaLogo />
+                </BrandCard>,
+                <BrandCard title='/Dolce&Gabanna' key='/Dolce&Gabanna'>
+                  <DGLogo />
+                </BrandCard>,
+                <BrandCard title='/Orbit' key='/Orbit'>
+                  <OrbitLogo />
+                </BrandCard>,
+                <BrandCard title='/G-Shock' key='/G-Shock'>
+                  <GShockLogo />
+                </BrandCard>,
+                <BrandCard title='/LG' key='/LG'>
+                  <LGLogo />
+                </BrandCard>,
+                <BrandCard title='/GQ' key='/GQ'>
+                  <GQLogo />
+                </BrandCard>,
+              ]}
+            />
+          </div>
+        )}
       </div>
     </div>
   )

@@ -24,7 +24,7 @@
   z-index: 99999;
 }
 .menuIcon.opened {
-  transform: translateY(379px);
+  transform: translateY(379px) translateX(-50%);
 }
 .hiddenBlock {
   width: 0;

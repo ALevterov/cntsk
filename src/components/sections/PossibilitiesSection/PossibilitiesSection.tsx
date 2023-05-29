@@ -38,7 +38,7 @@ const PossibilitiesSection = () => {
   return (
     <div className={styles.section}>
       <div className={global.container}>
-        <SimpleTitle position='center'>
+        <SimpleTitle position='center' className={styles.simpleTitle}>
           Возможные направления применения возможностей ЦНТСК
         </SimpleTitle>
         <div className={styles.cardsWrapper}>

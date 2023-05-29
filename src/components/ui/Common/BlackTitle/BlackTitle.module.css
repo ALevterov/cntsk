@@ -19,3 +19,8 @@
     font-size: 59.7519px;
   }
 }
+@media screen and (max-width: 768px) {
+  .h1 {
+    font-size: 50px;
+  }
+}

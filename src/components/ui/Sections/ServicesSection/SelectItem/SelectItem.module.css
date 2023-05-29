@@ -17,6 +17,7 @@
   padding: 20px;
   transition: color 0.3s ease, background-color 0.3s ease;
   cursor: pointer;
+  white-space: nowrap;
 }
 .item.active {
   background-color: var(--light-green);

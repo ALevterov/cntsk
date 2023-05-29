@@ -11,6 +11,9 @@
 
   justify-content: center;
 }
+.mobileCarousel {
+  display: none;
+}
 @media screen and (max-width: 1440px) {
   .section {
     padding-top: 75px;
@@ -20,5 +23,20 @@
     margin-top: 87px;
     column-gap: 30px;
     row-gap: 30px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .mobileCarousel {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  .section {
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+  .cardsContainer {
+    margin-top: 0;
+    display: none;
   }
 }

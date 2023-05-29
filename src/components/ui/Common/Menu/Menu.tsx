@@ -9,7 +9,7 @@ import VKIcon from '@/icons/VKIcon'
 import ColoredIcon from '../ColoredIcon/ColoredIcon'
 import HeaderButton from '../Header/HeaderButton'
 import Link from 'next/link'
-import MenuCloseIcon from '@/icons/menuCloseIcon'
+import MenuCloseIcon from '@/icons/MenuCloseIcon'
 const Menu = ({
   opened,
   closeMenu,

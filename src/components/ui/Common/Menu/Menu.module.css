@@ -11,11 +11,12 @@
   transition: opacity 0.3s ease, transform 0.3s ease;
 
   position: fixed;
-  z-index: var(--menu-z-index);
+  /* z-index: var(--menu-z-index); */
   top: 0;
   left: 0;
   right: 0;
   will-change: transform, opacity;
+  z-index: 9999;
 }
 
 .wrapper {
@@ -132,6 +133,13 @@
 }
 
 @media screen and (max-width: 768px) {
+  /* .container.opened {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  } */
   .container {
     transform: translateY(100vh);
   }

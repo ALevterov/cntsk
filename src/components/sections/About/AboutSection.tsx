@@ -4,9 +4,11 @@ import global from '@/styles/global.module.css'
 import WSIcon from '@/icons/WSIcon'
 import ASCIcon from '@/icons/ASCIcon'
 import BlackTitle from '@/components/ui/Common/BlackTitle/BlackTitle'
+import Header from '@/components/ui/Common/Header/Header'
 const AboutSection = () => {
   return (
     <div className={styles.section}>
+      <Header className={styles.mobileHeader} />
       <div className={[global.container].join(' ')}>
         <div className={styles.contentWrapper}>
           <div className={styles.contentRight}>

@@ -22,3 +22,12 @@
     margin-bottom: 74px;
   }
 }
+@media screen and (max-width: 768px) {
+  .h1,
+  .title {
+    white-space: normal;
+    font-size: 25px;
+    line-height: 25px;
+    margin-bottom: 40px;
+  }
+}

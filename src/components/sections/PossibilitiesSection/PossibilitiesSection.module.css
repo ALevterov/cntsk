@@ -76,3 +76,23 @@ div.card8 {
     height: 0px;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .simpleTitle {
+    font-size: 25px;
+    line-height: 25px;
+    white-space: normal;
+    margin-bottom: 0;
+    /* margin-bottom: 40px; */
+  }
+  .section {
+    padding-top: 60px;
+    padding-bottom: 40px;
+  }
+  .cardsWrapper {
+    flex-wrap: nowrap;
+    max-width: 100%;
+    overflow-x: auto;
+    padding: 40px 40px 37px 0;
+  }
+}

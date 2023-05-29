@@ -50,3 +50,9 @@
     padding: 10px 7px;
   }
 }
+@media screen and (max-width: 768px) {
+  .cardOuter {
+    box-shadow: 13.4978px 10.4983px 44.2427px rgba(0, 0, 0, 0.11);
+    border-radius: 14.9975px;
+  }
+}
