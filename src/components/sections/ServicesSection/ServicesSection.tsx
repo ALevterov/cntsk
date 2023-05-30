@@ -50,10 +50,11 @@ const ServicesSection = () => {
   const onModalClose = () => {
     let allContentElement = document.getElementById('all-content')
     setModalOpened(false)
-
+    if (allContentElement) {
+      allContentElement.classList.remove('no-overflow')
+    }
     setTimeout(() => {
       if (allContentElement) {
-        allContentElement.classList.remove('no-overflow')
         let services = document.getElementById('services')
         services?.scrollIntoView()
       }
