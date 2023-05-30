@@ -206,6 +206,9 @@
     overflow: -moz-scrollbars-none;
     scrollbar-width: none;
   }
+  .selectItemsContainer::-webkit-scrollbar {
+    width: 0;
+  }
   .input,
   .input:focus,
   .input:active {

@@ -101,3 +101,6 @@ div.card8 {
     scrollbar-width: none;
   }
 }
+.cardsWrapper::-webkit-scrollbar {
+  width: 0;
+}

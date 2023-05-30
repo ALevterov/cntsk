@@ -82,6 +82,9 @@
     overflow: -moz-scrollbars-none;
     scrollbar-width: none;
   }
+  .cardsContainer::-webkit-scrollbar {
+    width: 0;
+  }
   .mobileHeader {
     display: flex;
   }

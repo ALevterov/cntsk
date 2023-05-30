@@ -76,7 +76,7 @@ export default function Home() {
     if (secondHalfRef.current && firstHalfRef.current) {
       secondHalfRef.current.style.marginTop = `calc(${firstHalfRef.current.clientHeight}px + 120vh)`
     }
-  }, [])
+  }, [scrollListener])
   const menuIconClasses = useMemo(() => {
     const classes = [menuStyles.menuIcon]
     if (menuOpen) {
