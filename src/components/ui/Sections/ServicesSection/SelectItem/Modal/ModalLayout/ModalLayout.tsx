@@ -39,7 +39,13 @@ const formikInitialValues: IFormValues = {
   phone: '',
   tg: '',
 }
-const ModalLayout = ({ onClose, services, type, opened }: ModalProps) => {
+const ModalLayout = ({
+  onClose,
+  services,
+  type,
+  opened,
+  onSubmit,
+}: ModalProps) => {
   const overlayRef = useRef<HTMLDivElement | null>(null)
   const contentRef = useRef<HTMLDivElement | null>(null)
   const [animationIn, setAnimationIn] = useState(false)
@@ -60,6 +66,7 @@ const ModalLayout = ({ onClose, services, type, opened }: ModalProps) => {
     values: any,
     { setErrors, setStatus, setSubmitting }: any
   ) => {
+    onSubmit()
     try {
       // let response = await fetch(
       //   'https://willstar.ru/?page_id=59&email=0@0.ru&service=Продюссирование блоггеров&phone=000000000'
@@ -115,7 +122,7 @@ const ModalLayout = ({ onClose, services, type, opened }: ModalProps) => {
                 ))}
               {type === 'select' &&
                 services.map(service => (
-                  <SelectItem key={service} initialActive={true}>
+                  <SelectItem key={service} active={true}>
                     {service}
                   </SelectItem>
                 ))}

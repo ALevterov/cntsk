@@ -42,15 +42,22 @@ const ServicesSection = () => {
 
   const [modalOpened, setModalOpened] = useState(false)
 
+  const onSubmit = () => {
+    setServices([])
+    setSelected([])
+  }
+
   const onModalClose = () => {
     let allContentElement = document.getElementById('all-content')
     setModalOpened(false)
 
-    if (allContentElement) {
-      allContentElement.classList.remove('no-overflow')
-      let services = document.getElementById('services')
-      services?.scrollIntoView()
-    }
+    setTimeout(() => {
+      if (allContentElement) {
+        allContentElement.classList.remove('no-overflow')
+        let services = document.getElementById('services')
+        services?.scrollIntoView()
+      }
+    }, 100)
   }
 
   const onModalOpen = () => {
@@ -170,7 +177,11 @@ const ServicesSection = () => {
               )}
             >
               {selectItems.map(item => (
-                <SelectItem key={item} onChangeSelected={handleChangeSelected}>
+                <SelectItem
+                  key={item}
+                  onChangeSelected={handleChangeSelected}
+                  active={selected.some(sel => sel === item)}
+                >
                   {item}
                 </SelectItem>
               ))}
@@ -189,6 +200,7 @@ const ServicesSection = () => {
         services={fieldActive === 'select' ? selected : services}
         opened={modalOpened}
         onClose={onModalClose}
+        onSubmit={onSubmit}
       />
     </>
   )

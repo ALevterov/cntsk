@@ -7,9 +7,10 @@ export interface ModalProps {
   onClose: () => void
   services: string[]
   type: 'input' | 'select'
+  onSubmit: () => void
 }
 
-const Modal = ({ opened, onClose, services, type }: ModalProps) => {
+const Modal = ({ opened, onClose, services, type, onSubmit }: ModalProps) => {
   const { mounted } = useMount({ opened })
 
   if (!mounted) {
@@ -17,7 +18,13 @@ const Modal = ({ opened, onClose, services, type }: ModalProps) => {
   }
   return (
     <Portal>
-      <ModalLayout onClose={onClose} services={services} type={type} opened />
+      <ModalLayout
+        onSubmit={onSubmit}
+        onClose={onClose}
+        services={services}
+        type={type}
+        opened
+      />
     </Portal>
   )
 }
