@@ -23,6 +23,7 @@ export default function Home() {
   const sectionRef = useRef<HTMLDivElement | null>(null)
   const firstHalfRef = useRef<HTMLDivElement | null>(null)
   const secondHalfRef = useRef<HTMLDivElement | null>(null)
+  const allContentRef = useRef<HTMLDivElement | null>(null)
   const scrollPos = useRef<number | null>(null)
   const scrollPosSaved = useRef<number | null>(null)
 
@@ -62,12 +63,16 @@ export default function Home() {
       return
     }
     if (menuOpen) {
-      document.body.classList.add('no-overflow')
-      scrollPosSaved.current = scrollPos.current
+      if (allContentRef.current) {
+        allContentRef.current.classList.add('no-overflow')
+        scrollPosSaved.current = scrollPos.current
+      }
     } else {
-      document.body.classList.remove('no-overflow')
-      if (scrollPosSaved.current) {
-        window.scrollTo(0, scrollPosSaved.current)
+      if (allContentRef.current) {
+        allContentRef.current.classList.remove('no-overflow')
+        if (scrollPosSaved.current) {
+          window.scrollTo(0, scrollPosSaved.current)
+        }
       }
     }
   }, [menuOpen])
@@ -87,27 +92,29 @@ export default function Home() {
 
   return (
     <>
-      <div className={menuIconClasses.join(' ')} onClick={toggleMenu}>
-        <MenuButton />
-      </div>
-      <div className={styles.firstHalfWrapper} ref={firstHalfRef}>
-        <Menu opened={menuOpen} closeMenu={closeMenu} />
-        <FirstSection />
-        <div className={styles.contentContainer} ref={sectionRef}>
-          <SecondSection />
-          <TodaySection />
-          <VideoSection />
-          <ServicesSection />
-          <PossibilitiesSection />
+      <div ref={allContentRef}>
+        <div className={menuIconClasses.join(' ')} onClick={toggleMenu}>
+          <MenuButton />
+        </div>
+        <div className={styles.firstHalfWrapper} ref={firstHalfRef}>
+          <FirstSection />
+          <div className={styles.contentContainer} ref={sectionRef}>
+            <SecondSection />
+            <TodaySection />
+            <VideoSection />
+            <ServicesSection />
+            <PossibilitiesSection />
+          </div>
+        </div>
+        <div className={styles.secondHalfWrapper} ref={secondHalfRef}>
+          <AboutSection />
+          <BrandSection />
+          <CasesSection />
+          <ManagmentSection />
+          <Footer />
         </div>
       </div>
-      <div className={styles.secondHalfWrapper} ref={secondHalfRef}>
-        <AboutSection />
-        <BrandSection />
-        <CasesSection />
-        <ManagmentSection />
-        <Footer />
-      </div>
+      <Menu opened={menuOpen} closeMenu={closeMenu} />
     </>
   )
 }
