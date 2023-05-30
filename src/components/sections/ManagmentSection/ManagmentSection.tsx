@@ -10,7 +10,7 @@ const ManagmentSection = () => {
   return (
     <div className={styles.section} id='managment'>
       <div className={global.container}>
-        <BlackTitle>РУКОВОДСТВО</BlackTitle>
+        <BlackTitle className={styles.titleClass}>РУКОВОДСТВО</BlackTitle>
         <div className={styles.cardsContainer}>
           <ManagmentCard
             title='Вадим Дегтярев'

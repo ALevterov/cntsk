@@ -33,12 +33,14 @@ export default function Home() {
 
   const scrollListener = useCallback(() => {
     let additionalScroll = 100
-
+    let secondHalfDif = 180
     if (window.innerWidth > 768) {
       additionalScroll = 600
+      secondHalfDif = 180
     }
     if (window.innerWidth <= 768) {
       additionalScroll = 100
+      secondHalfDif = 110
     }
     scrollPos.current = window.scrollY
     const vh = window.innerHeight / 100
@@ -51,7 +53,7 @@ export default function Home() {
       const dif = window.scrollY - firstHalfRef.current.clientHeight
       if (
         window.scrollY >= firstHalfRef.current.clientHeight &&
-        window.scrollY <= firstHalfRef.current.clientHeight + 180 * vh
+        window.scrollY <= firstHalfRef.current.clientHeight + secondHalfDif * vh
       ) {
         firstHalfRef.current.style.transform = `translateY(${-1 * dif})`
         secondHalfRef.current.style.marginTop = `calc(${window.scrollY}px)`

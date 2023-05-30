@@ -73,7 +73,7 @@
 @media screen and (max-width: 768px) {
   .scrollableBlock {
     width: unset;
-    padding: 72px 70px 72px 0px;
+    padding: 22px 70px 22px 0px;
   }
   .mainLine {
     margin: 0 125px;

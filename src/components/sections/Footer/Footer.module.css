@@ -23,6 +23,11 @@
 }
 @media screen and (max-width: 768px) {
   .section {
-    display: none;
+    padding-top: 33px;
+    padding-bottom: 55px;
+  }
+  .cardsContainer {
+    display: flex;
+    flex-direction: column;
   }
 }

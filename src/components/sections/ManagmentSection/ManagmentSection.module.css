@@ -20,6 +20,16 @@
 }
 @media screen and (max-width: 768px) {
   .section {
-    display: none;
+    margin-bottom: 0;
+    padding-bottom: 60px;
+  }
+  .cardsContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    gap: 40px;
+  }
+  .titleClass {
+    font-size: 43.9891px;
   }
 }
