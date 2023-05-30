@@ -31,10 +31,18 @@ export default function Home() {
   }, [])
 
   const scrollListener = useCallback(() => {
+    let additionalScroll = 100
+
+    if (window.innerWidth > 768) {
+      additionalScroll = 600
+    }
+    if (window.innerWidth <= 768) {
+      additionalScroll = 100
+    }
     scrollPos.current = window.scrollY
     const vh = window.innerHeight / 100
     if (sectionRef.current) {
-      if (window.scrollY <= window.innerHeight + 600) {
+      if (window.scrollY <= window.innerHeight + additionalScroll) {
         sectionRef.current.style.marginTop = `calc(${window.scrollY}px)`
       }
     }
