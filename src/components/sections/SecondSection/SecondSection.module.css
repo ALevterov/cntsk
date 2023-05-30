@@ -77,6 +77,10 @@
     max-width: 100%;
     padding-right: 60px;
     /* padding-left: 40px; */
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+    scrollbar-width: none;
   }
   .mobileHeader {
     display: flex;

@@ -196,17 +196,15 @@
   .inputBlock {
     margin-bottom: 40px;
   }
-  /* .selectItemsContainer {
-    max-height: 200px;
-    max-width: 100vw;
-    overflow-x: auto;
-    flex-direction: row;
-    flex-wrap: nowrap;
-  } */
   .selectItemsContainer {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     overflow-x: auto;
+
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+    scrollbar-width: none;
   }
   .input,
   .input:focus,

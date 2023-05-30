@@ -94,5 +94,10 @@ div.card8 {
     max-width: 100%;
     overflow-x: auto;
     padding: 40px 40px 37px 0;
+
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+    scrollbar-width: none;
   }
 }
