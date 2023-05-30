@@ -19,7 +19,7 @@ const TodaySection = () => {
           </div>
         </div>
       </div>
-      <div className={styles.containerBottom}>
+      <div className={styles.containerBottom} id='whywe'>
         <h2 className={styles.bottomText}>
           Почему те, кто ценит время, деньги и нацелен на результат выбирают
           ЦНТСК, а не устаревшие громоздкие структуры?

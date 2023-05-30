@@ -20,7 +20,6 @@ const ScrollableBlock = ({
   const baseX = useMotionValue(0)
 
   const x = useTransform(baseX, v => {
-    console.log('v', v)
     return `${wrap(10, -75, v)}%`
   })
 

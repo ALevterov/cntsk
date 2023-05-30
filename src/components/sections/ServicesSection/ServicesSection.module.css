@@ -219,7 +219,7 @@
     font-weight: 400;
     font-size: 14.9975px;
     line-height: 18px;
-    height: 70px;
+    height: 80px;
   }
   .inputWrapper svg {
     left: 34px;
@@ -229,6 +229,6 @@
   .input,
   .input:focus,
   .input:active {
-    height: 90px;
+    height: 100px;
   }
 }

@@ -10,6 +10,14 @@ import ColoredIcon from '../ColoredIcon/ColoredIcon'
 import HeaderButton from '../Header/HeaderButton'
 import Link from 'next/link'
 import MenuCloseIcon from '@/icons/MenuCloseIcon'
+import { useCallback } from 'react'
+
+// interface TAnchorClickEvent extends React.MouseEvent<HTMLAnchorElement, MouseEvent> {
+//   target: {
+//     href?: string
+//   }
+// }
+
 const Menu = ({
   opened,
   closeMenu,
@@ -21,6 +29,40 @@ const Menu = ({
   if (opened) {
     classes.push(styles.opened)
   }
+
+  const handleNavigationClick: React.MouseEventHandler<HTMLAnchorElement> =
+    useCallback(
+      (e: any) => {
+        e.preventDefault()
+        const match = e.target.href.match(/#[a-z]+/)
+        let href: string = ''
+        if (match) {
+          href = match[0].replace('#', '')
+        }
+        closeMenu()
+        let section = document.getElementById(href)
+
+        setTimeout(() => {
+          if (section) {
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' })
+          }
+        }, 100)
+      },
+      [closeMenu]
+    )
+  const handleOrderBtnClick: React.MouseEventHandler<HTMLDivElement> =
+    useCallback(() => {
+      let href = 'services'
+      closeMenu()
+      let section = document.getElementById(href)
+
+      setTimeout(() => {
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        }
+      }, 100)
+    }, [closeMenu])
+
   return (
     <div className={classes.join(' ')}>
       <div className={[styles.wrapper, global.container].join(' ')}>
@@ -65,44 +107,80 @@ const Menu = ({
         <div className={styles.menuBottom}>
           <div className={styles.menuList}>
             <div className={styles.menuListBlock}>
-              <Link href={'#'} className={styles.menuListItem}>
+              <Link
+                href={'#today'}
+                className={styles.menuListItem}
+                onClick={handleNavigationClick}
+              >
                 ЦНТСК сегодня
               </Link>
-              <Link href={'#'} className={styles.menuListItem}>
+              <Link
+                href={'#whywe'}
+                className={styles.menuListItem}
+                onClick={handleNavigationClick}
+              >
                 Почему мы?
               </Link>
             </div>
             <div className={styles.menuListBlock}>
-              <Link href={'#'} className={styles.menuListItem}>
+              <Link
+                href={'#services'}
+                className={styles.menuListItem}
+                onClick={handleNavigationClick}
+              >
                 Услуги
               </Link>
-              <Link href={'#'} className={styles.menuListItem}>
+              <Link
+                href={'#possibilities'}
+                className={styles.menuListItem}
+                onClick={handleNavigationClick}
+              >
                 Направления
               </Link>
             </div>
             <div className={styles.menuListBlock}>
-              <Link href={'#'} className={styles.menuListItem}>
+              <Link
+                href={'#aboutus'}
+                className={styles.menuListItem}
+                onClick={handleNavigationClick}
+              >
                 О компании
               </Link>
-              <Link href={'#'} className={styles.menuListItem}>
+              <Link
+                href={'#brand'}
+                className={styles.menuListItem}
+                onClick={handleNavigationClick}
+              >
                 Клиенты
               </Link>
             </div>
             <div className={styles.menuListBlock}>
-              <Link href={'#'} className={styles.menuListItem}>
+              <Link
+                href={'#cases'}
+                className={styles.menuListItem}
+                onClick={handleNavigationClick}
+              >
                 Кейсы
               </Link>
-              <Link href={'#'} className={styles.menuListItem}>
+              <Link
+                href={'#managment'}
+                className={styles.menuListItem}
+                onClick={handleNavigationClick}
+              >
                 Руководство
               </Link>
             </div>
             <div className={styles.menuListBlock}>
-              <Link href={'#'} className={styles.menuListItem}>
+              <Link
+                href={'#footer'}
+                className={styles.menuListItem}
+                onClick={handleNavigationClick}
+              >
                 Контакты
               </Link>
             </div>
           </div>
-          <div className={styles.menuButton}>
+          <div className={styles.menuButton} onClick={handleOrderBtnClick}>
             <HeaderButton>Заказать услугу</HeaderButton>
           </div>
         </div>
