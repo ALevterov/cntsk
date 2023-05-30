@@ -5,12 +5,10 @@ import global from '@/styles/global.module.css'
 import img1 from '@/assets/ManagmentSection/1.png'
 import img2 from '@/assets/ManagmentSection/2.png'
 import img3 from '@/assets/ManagmentSection/3.png'
-import { useState } from 'react'
 
 const ManagmentSection = () => {
-  const [oneOpened, setOneOpened] = useState(false)
   return (
-    <div className={styles.section}>
+    <div className={styles.section} id='managment'>
       <div className={global.container}>
         <BlackTitle>РУКОВОДСТВО</BlackTitle>
         <div className={styles.cardsContainer}>

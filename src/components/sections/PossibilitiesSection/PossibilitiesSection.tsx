@@ -36,7 +36,7 @@ const cards = [
 
 const PossibilitiesSection = () => {
   return (
-    <div className={styles.section}>
+    <div className={styles.section} id='possibilities'>
       <div className={global.container}>
         <SimpleTitle position='center' className={styles.simpleTitle}>
           Возможные направления применения возможностей ЦНТСК

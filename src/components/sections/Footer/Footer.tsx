@@ -13,7 +13,7 @@ const coords3: ICoords = { lat: 44.800028, lng: 20.333483 }
 
 const Footer = () => {
   return (
-    <div className={styles.section}>
+    <div className={styles.section} id='footer'>
       <div className={global.container}>
         <BlackTitle color='white'>офисы</BlackTitle>
         <div className={styles.cardsContainer}>

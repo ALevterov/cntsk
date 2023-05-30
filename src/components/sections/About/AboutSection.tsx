@@ -7,7 +7,7 @@ import BlackTitle from '@/components/ui/Common/BlackTitle/BlackTitle'
 import Header from '@/components/ui/Common/Header/Header'
 const AboutSection = () => {
   return (
-    <div className={styles.section}>
+    <div className={styles.section} id='aboutus'>
       <Header className={styles.mobileHeader} />
       <div className={[global.container].join(' ')}>
         <div className={styles.contentWrapper}>

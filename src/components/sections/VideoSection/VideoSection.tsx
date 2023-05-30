@@ -12,7 +12,7 @@ const items: string[] = [
 ]
 const VideoSection = () => {
   return (
-    <div className={styles.section}>
+    <div className={styles.section} id='videos'>
       <div className={styles.container}>
         <div className={styles.item}>
           <img src={img1.src} alt='image' />

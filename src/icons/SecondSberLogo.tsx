@@ -48,10 +48,10 @@ const SecondSberLogo = () => {
           y2='22.491'
           gradientUnits='userSpaceOnUse'
         >
-          <stop offset='0.14' stop-color='#F2E913' />
-          <stop offset='0.3' stop-color='#E7E518' />
-          <stop offset='0.58' stop-color='#CADB26' />
-          <stop offset='0.89' stop-color='#A3CD39' />
+          <stop offset='0.14' stopColor='#F2E913' />
+          <stop offset='0.3' stopColor='#E7E518' />
+          <stop offset='0.58' stopColor='#CADB26' />
+          <stop offset='0.89' stopColor='#A3CD39' />
         </linearGradient>
         <linearGradient
           id='paint1_linear_112_1402'
@@ -61,9 +61,9 @@ const SecondSberLogo = () => {
           y2='6.18901'
           gradientUnits='userSpaceOnUse'
         >
-          <stop offset='0.06' stop-color='#0FA8E0' />
-          <stop offset='0.54' stop-color='#0099F9' />
-          <stop offset='0.92' stop-color='#0291EB' />
+          <stop offset='0.06' stopColor='#0FA8E0' />
+          <stop offset='0.54' stopColor='#0099F9' />
+          <stop offset='0.92' stopColor='#0291EB' />
         </linearGradient>
         <linearGradient
           id='paint2_linear_112_1402'
@@ -73,9 +73,9 @@ const SecondSberLogo = () => {
           y2='53.7994'
           gradientUnits='userSpaceOnUse'
         >
-          <stop offset='0.12' stop-color='#A3CD39' />
-          <stop offset='0.28' stop-color='#86C339' />
-          <stop offset='0.87' stop-color='#21A038' />
+          <stop offset='0.12' stopColor='#A3CD39' />
+          <stop offset='0.28' stopColor='#86C339' />
+          <stop offset='0.87' stopColor='#21A038' />
         </linearGradient>
         <linearGradient
           id='paint3_linear_112_1402'
@@ -85,8 +85,8 @@ const SecondSberLogo = () => {
           y2='9.41073'
           gradientUnits='userSpaceOnUse'
         >
-          <stop offset='0.06' stop-color='#0291EB' />
-          <stop offset='0.79' stop-color='#0C8ACB' />
+          <stop offset='0.06' stopColor='#0291EB' />
+          <stop offset='0.79' stopColor='#0C8ACB' />
         </linearGradient>
         <linearGradient
           id='paint4_linear_112_1402'
@@ -96,11 +96,11 @@ const SecondSberLogo = () => {
           y2='59.1787'
           gradientUnits='userSpaceOnUse'
         >
-          <stop offset='0.13' stop-color='#F2E913' />
-          <stop offset='0.3' stop-color='#EBE716' />
-          <stop offset='0.53' stop-color='#D9E01F' />
-          <stop offset='0.8' stop-color='#BBD62D' />
-          <stop offset='0.98' stop-color='#A3CD39' />
+          <stop offset='0.13' stopColor='#F2E913' />
+          <stop offset='0.3' stopColor='#EBE716' />
+          <stop offset='0.53' stopColor='#D9E01F' />
+          <stop offset='0.8' stopColor='#BBD62D' />
+          <stop offset='0.98' stopColor='#A3CD39' />
         </linearGradient>
         <linearGradient
           id='paint5_linear_112_1402'
@@ -110,9 +110,9 @@ const SecondSberLogo = () => {
           y2='12.3049'
           gradientUnits='userSpaceOnUse'
         >
-          <stop offset='0.07' stop-color='#A3CD39' />
-          <stop offset='0.26' stop-color='#81C55F' />
-          <stop offset='0.92' stop-color='#0FA8E0' />
+          <stop offset='0.07' stopColor='#A3CD39' />
+          <stop offset='0.26' stopColor='#81C55F' />
+          <stop offset='0.92' stopColor='#0FA8E0' />
         </linearGradient>
       </defs>
     </svg>

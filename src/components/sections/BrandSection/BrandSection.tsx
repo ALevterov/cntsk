@@ -27,7 +27,7 @@ const BrandSection = () => {
     }
   }, [])
   return (
-    <div className={styles.section}>
+    <div className={styles.section} id='brand'>
       <div className={global.container}>
         <SimpleTitle position='center'>
           Бренды, с которыми мы работали:

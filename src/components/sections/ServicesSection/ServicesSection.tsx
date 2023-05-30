@@ -79,7 +79,7 @@ const ServicesSection = () => {
   )
 
   return (
-    <div className={styles.section}>
+    <div className={styles.section} id='services'>
       <div className={global.container}>
         <div className={styles.top}>
           <BlackTitle color='white'>Услуги</BlackTitle>

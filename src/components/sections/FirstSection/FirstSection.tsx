@@ -24,7 +24,7 @@ const FirstSection = () => {
     })
   }, [])
   return (
-    <div className={styles.section} ref={sectionRef}>
+    <div className={styles.section} ref={sectionRef} id='cntsk'>
       <Header />
       <div className={[global.container, styles.centralContainer].join(' ')}>
         <div className={styles.hiddenBlock}></div>

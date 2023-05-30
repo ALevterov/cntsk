@@ -35,7 +35,7 @@ const cards: TCard[] = [
 
 const SecondSection = () => {
   return (
-    <div className={styles.section}>
+    <div className={styles.section} id='second'>
       <div className={[global.container, styles.container].join(' ')}>
         <div className={styles.vertical}>
           <h1 className={styles.mainText}>ЦНТСК</h1>

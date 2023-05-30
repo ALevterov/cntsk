@@ -4,7 +4,7 @@ import TodayTitle from '@/components/ui/Sections/TodaySection/TodayTitle'
 import Slider from '@/components/ui/Common/Slider/Slider'
 const TodaySection = () => {
   return (
-    <div className={styles.section}>
+    <div className={styles.section} id='today'>
       <div className={styles.containerTop}>
         <div className={styles.topLeft}>
           <TodayTitle>

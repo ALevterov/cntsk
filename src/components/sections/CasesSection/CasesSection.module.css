@@ -1,5 +1,6 @@
 .section {
   overflow: hidden;
+  padding-top: 50px;
 }
 .sectionTop {
   display: flex;
@@ -46,6 +47,9 @@
 }
 
 @media screen and (max-width: 1440px) {
+  .section {
+    padding-top: 45px;
+  }
   .cardsTopContainer,
   .cardsBottomContainer {
     gap: 177px;
@@ -64,5 +68,15 @@
   .mainLine {
     margin: 0 135px;
     width: 4300px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .scrollableBlock {
+    width: unset;
+    padding: 72px 70px 72px 0px;
+  }
+  .mainLine {
+    margin: 0 125px;
+    width: 4130px;
   }
 }
