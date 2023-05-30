@@ -12,3 +12,11 @@
   border-bottom: 1px solid var(--light-green);
   outline: none;
 }
+@media screen and (max-width: 768px) {
+  .input {
+    padding: 4px 10px;
+    font-size: 14.3551px;
+    line-height: 96.3%;
+    width: 100%;
+  }
+}

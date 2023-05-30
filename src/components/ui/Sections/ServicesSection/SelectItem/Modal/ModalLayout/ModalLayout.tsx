@@ -10,6 +10,7 @@ import OrderFindedItem from '@/components/ui/Common/OrderFindedItem/OrderFindedI
 import SelectItem from '../../SelectItem'
 import CustomInput from '@/components/ui/Common/CustomInput/CustomInput'
 import SubmitButton from '@/components/ui/Common/SumbitButton/SubmitButton'
+import Header from '@/components/ui/Common/Header/Header'
 
 const overlayAnimations = {
   enter: styles.overlayEnter,
@@ -42,9 +43,15 @@ const ModalLayout = ({ onClose, services, type, opened }: ModalProps) => {
   const overlayRef = useRef<HTMLDivElement | null>(null)
   const contentRef = useRef<HTMLDivElement | null>(null)
   const [animationIn, setAnimationIn] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
 
   const [mailSended, setMailSended] = useState(false)
 
+  useEffect(() => {
+    if (window.innerWidth <= 768) {
+      setIsMobile(true)
+    }
+  }, [])
   useEffect(() => {
     setAnimationIn(opened)
   }, [opened])
@@ -88,6 +95,7 @@ const ModalLayout = ({ onClose, services, type, opened }: ModalProps) => {
         classNames={contentAnimations}
       >
         <div className={styles.content} ref={contentRef}>
+          {isMobile && <Header className={styles.header} />}
           <div className={styles.btnClose} onClick={onClose}>
             <ModalCloseIcon />
           </div>
@@ -238,8 +246,18 @@ const ModalLayout = ({ onClose, services, type, opened }: ModalProps) => {
           )}
           {mailSended && (
             <div className={styles.successText}>
-              Ваша заявка успешно отправлена. Мы свяжемся с вами в ближайшее
-              время.
+              {!isMobile && (
+                <>
+                  Ваша заявка успешно отправлена. <br /> Мы свяжемся с вами в
+                  ближайшее время.
+                </>
+              )}
+              {isMobile && (
+                <>
+                  <p>Ваша заявка успешно отправлена.</p>
+                  <p>Мы свяжемся с вами в ближайшее время.</p>
+                </>
+              )}
             </div>
           )}
         </div>

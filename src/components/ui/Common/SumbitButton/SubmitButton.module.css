@@ -10,6 +10,7 @@
   padding: 20px;
 
   font-style: normal;
+  font-family: 'Gilroy';
   font-weight: 600;
   font-size: 25px;
   line-height: 31px;
@@ -34,4 +35,13 @@
 .btn:disabled:hover {
   color: #000000;
   background-color: #7dffb1;
+}
+
+@media screen and (max-width: 768px) {
+  .btn {
+    padding: 20px;
+    font-size: 25px;
+    line-height: 31px;
+    max-width: 100%;
+  }
 }
