@@ -1,0 +1,171 @@
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 2;
+  cursor: pointer;
+}
+
+.content {
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  z-index: 3;
+
+  padding: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  align-items: center;
+  position: relative;
+}
+
+.title {
+  font-style: italic;
+  font-weight: 1000;
+  font-size: 80px;
+  line-height: 96.3%;
+  text-transform: uppercase;
+
+  color: #ffffff;
+}
+.btnClose {
+  cursor: pointer;
+  position: absolute;
+  top: 100px;
+  right: 100px;
+}
+.servicesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 35px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  align-items: center;
+}
+.inputInner {
+  display: flex;
+  gap: 180px;
+}
+.inputBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 114px;
+}
+.additionalText {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 96.3%;
+
+  /* identical to box height, or 24px */
+
+  color: #ffffff;
+}
+.formError {
+  color: red;
+}
+.successText {
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 45px;
+  text-align: center;
+
+  color: #ffffff;
+  max-width: 579px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+.titleSended {
+  color: var(--light-green);
+}
+/* animation styles */
+.contentEnter {
+  opacity: 0;
+  transform: scale(0.1);
+}
+
+.contentEnterActive {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 300ms, transform 300ms;
+  transition-delay: 500ms;
+}
+
+.contentExit {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.contentExitActive {
+  opacity: 0;
+  transform: scale(0.1);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.overlayEnterActive {
+  animation: unfoldIn 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+.overlayExitActive {
+  animation: unfoldOut 1s 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+@keyframes unfoldIn {
+  0% {
+    transform: scaleY(0.005) scaleX(0);
+  }
+  50% {
+    transform: scaleY(0.005) scaleX(1);
+  }
+  100% {
+    transform: scaleY(1) scaleX(1);
+  }
+}
+
+@keyframes unfoldOut {
+  0% {
+    transform: scaleY(1) scaleX(1);
+  }
+  50% {
+    transform: scaleY(0.005) scaleX(1);
+  }
+  100% {
+    transform: scaleY(0.005) scaleX(0);
+  }
+}

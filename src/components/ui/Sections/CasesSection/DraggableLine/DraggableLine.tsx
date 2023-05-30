@@ -26,8 +26,6 @@ const DraggableLine = ({
       setConstraintRight(lastPoint.current.offsetLeft)
     }
     if (secondPoint.current) {
-      console.log(secondPoint.current.offsetLeft)
-
       animate('#draggable-point', {
         x: [offsetX, secondPoint.current.offsetLeft],
       })
@@ -111,7 +109,6 @@ const DraggableLine = ({
       } else if (endPoint < 0) {
         animate('#draggable-point', { x: [offsetX, -0.5] })
       }
-      console.log(endPoint)
     }
     if (window.innerWidth > 1440) {
       animate('#draggable-point', { x: [offsetX, endPoint] })

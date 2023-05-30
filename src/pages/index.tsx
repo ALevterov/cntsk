@@ -94,7 +94,7 @@ export default function Home() {
 
   return (
     <>
-      <div ref={allContentRef}>
+      <div ref={allContentRef} id='all-content'>
         <div className={menuIconClasses.join(' ')} onClick={toggleMenu}>
           <MenuButton />
         </div>

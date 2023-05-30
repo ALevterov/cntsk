@@ -1,0 +1,14 @@
+.input {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 96.3%;
+
+  color: #ffffff;
+  padding: 8px 20px;
+  width: 29.48vw;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid var(--light-green);
+  outline: none;
+}

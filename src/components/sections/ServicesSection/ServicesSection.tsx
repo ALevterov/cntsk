@@ -8,6 +8,7 @@ import findServicesByString from '../../../helpers/findServicesByString'
 import OrderFindedItem from '@/components/ui/Common/OrderFindedItem/OrderFindedItem'
 import SearchServiceIcon from '@/icons/SearchServiceIcon'
 import SelectItem from '@/components/ui/Sections/ServicesSection/SelectItem/SelectItem'
+import Modal from '@/components/ui/Sections/ServicesSection/SelectItem/Modal/Modal'
 
 interface InputEvent extends React.MouseEvent<HTMLInputElement> {
   target: HTMLInputElement
@@ -38,6 +39,27 @@ const ServicesSection = () => {
   const searchString = useDebounce(input, 300)
   const [fieldActive, setFieldActive] = useState<'input' | 'select'>('input')
   const [selected, setSelected] = useState<string[] | []>([])
+
+  const [modalOpened, setModalOpened] = useState(false)
+
+  const onModalClose = () => {
+    let allContentElement = document.getElementById('all-content')
+    setModalOpened(false)
+
+    if (allContentElement) {
+      allContentElement.classList.remove('no-overflow')
+      let services = document.getElementById('services')
+      services?.scrollIntoView()
+    }
+  }
+
+  const onModalOpen = () => {
+    let allContentElement = document.getElementById('all-content')
+    setModalOpened(true)
+    if (allContentElement) {
+      allContentElement.classList.add('no-overflow')
+    }
+  }
 
   useEffect(() => {
     if (searchString !== '') {
@@ -79,80 +101,96 @@ const ServicesSection = () => {
   )
 
   return (
-    <div className={styles.section} id='services'>
-      <div className={global.container}>
-        <div className={styles.top}>
-          <BlackTitle color='white'>Услуги</BlackTitle>
-          <div className={styles.topText}>
-            Для вашего удобства, мы предлагаем воспользоваться поиском. Укажите
-            какие задачи вам необходимо реализовать. Затем оставьте заявку, и
-            наш менеджер свяжется с вами, чтобы уточнить детали.
+    <>
+      <div className={styles.section} id='services'>
+        <div className={global.container}>
+          <div className={styles.top}>
+            <BlackTitle color='white'>Услуги</BlackTitle>
+            <div className={styles.topText}>
+              Для вашего удобства, мы предлагаем воспользоваться поиском.
+              Укажите какие задачи вам необходимо реализовать. Затем оставьте
+              заявку, и наш менеджер свяжется с вами, чтобы уточнить детали.
+            </div>
           </div>
-        </div>
-        <div
-          className={[
-            styles.inputBlock,
-            fieldActive === 'select' ? styles.blockPassive : '',
-          ].join(' ')}
-          onClick={handleInputFocus}
-        >
-          <div className={styles.inputWrapper}>
-            <textarea
-              value={input}
-              onChange={handleChangeInput}
-              className={[styles.input, styles.textarea].join(' ')}
-              placeholder='Расскажите, что Вам необходимо. Оставьте заявку, и мы поможем вам реализовать задачу.'
-              onFocus={handleInputFocus}
-            />
-            <input
-              type='text'
-              value={input}
-              onChange={handleChangeInput}
-              className={[styles.input, styles.desktopInput].join(' ')}
-              placeholder='Расскажите, что Вам необходимо. Оставьте заявку, и мы поможем вам реализовать задачу.'
-              onFocus={handleInputFocus}
-            />
-            <SearchServiceIcon />
+          <div
+            className={[
+              styles.inputBlock,
+              fieldActive === 'select' ? styles.blockPassive : '',
+            ].join(' ')}
+            onClick={handleInputFocus}
+          >
+            <div className={styles.inputWrapper}>
+              <textarea
+                value={input}
+                onChange={handleChangeInput}
+                className={[styles.input, styles.textarea].join(' ')}
+                placeholder='Расскажите, что Вам необходимо. Оставьте заявку, и мы поможем вам реализовать задачу.'
+                onFocus={handleInputFocus}
+              />
+              <input
+                type='text'
+                value={input}
+                onChange={handleChangeInput}
+                className={[styles.input, styles.desktopInput].join(' ')}
+                placeholder='Расскажите, что Вам необходимо. Оставьте заявку, и мы поможем вам реализовать задачу.'
+                onFocus={handleInputFocus}
+              />
+              <SearchServiceIcon />
+            </div>
+            <div className={styles.inputWrapperBottom}>
+              <div className={styles.solveText}>наше решение для вас:</div>
+              {services.length !== 0 && (
+                <div className={styles.solveItems}>
+                  {services.map(service => (
+                    <OrderFindedItem key={service}>{service}</OrderFindedItem>
+                  ))}
+                </div>
+              )}
+              <OrderBtn
+                active={services.length !== 0 && fieldActive === 'input'}
+                onClick={onModalOpen}
+              >
+                Заказать
+              </OrderBtn>
+            </div>
           </div>
-          <div className={styles.inputWrapperBottom}>
-            <div className={styles.solveText}>наше решение для вас:</div>
-            {services.length !== 0 && (
-              <div className={styles.solveItems}>
-                {services.map(service => (
-                  <OrderFindedItem key={service}>{service}</OrderFindedItem>
-                ))}
-              </div>
-            )}
-            <OrderBtn active={services.length !== 0 && fieldActive === 'input'}>
-              Заказать
+          <div
+            className={[
+              styles.selectBlock,
+              fieldActive === 'input' ? styles.blockPassive : '',
+            ].join(' ')}
+            onClick={handleSelectFocus}
+          >
+            <h3 className={styles.selectTitle}>
+              Или выберите интересующие вас услуги из списка
+            </h3>
+            <div
+              className={[styles.selectItemsContainer, styles.desktop].join(
+                ' '
+              )}
+            >
+              {selectItems.map(item => (
+                <SelectItem key={item} onChangeSelected={handleChangeSelected}>
+                  {item}
+                </SelectItem>
+              ))}
+            </div>
+            <OrderBtn
+              active={fieldActive === 'select' && selected.length !== 0}
+              onClick={onModalOpen}
+            >
+              Заказать выбранную услугу
             </OrderBtn>
           </div>
         </div>
-        <div
-          className={[
-            styles.selectBlock,
-            fieldActive === 'input' ? styles.blockPassive : '',
-          ].join(' ')}
-          onClick={handleSelectFocus}
-        >
-          <h3 className={styles.selectTitle}>
-            Или выберите интересующие вас услуги из списка
-          </h3>
-          <div
-            className={[styles.selectItemsContainer, styles.desktop].join(' ')}
-          >
-            {selectItems.map(item => (
-              <SelectItem key={item} onChangeSelected={handleChangeSelected}>
-                {item}
-              </SelectItem>
-            ))}
-          </div>
-          <OrderBtn active={fieldActive === 'select' && selected.length !== 0}>
-            Заказать выбранную услугу
-          </OrderBtn>
-        </div>
       </div>
-    </div>
+      <Modal
+        type={fieldActive}
+        services={fieldActive === 'select' ? selected : services}
+        opened={modalOpened}
+        onClose={onModalClose}
+      />
+    </>
   )
 }
 

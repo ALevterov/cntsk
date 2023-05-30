@@ -2,12 +2,14 @@ import { memo, useState } from 'react'
 import styles from './SelectItem.module.css'
 const SelectItem = ({
   children,
-  onChangeSelected,
+  onChangeSelected = () => {},
+  initialActive = false,
 }: {
   children: string
-  onChangeSelected: (selectedItem: string, isActive: boolean) => void
+  onChangeSelected?: (selectedItem: string, isActive: boolean) => void
+  initialActive?: boolean
 }) => {
-  const [active, setActive] = useState(false)
+  const [active, setActive] = useState(initialActive)
   const handleClick = () => {
     onChangeSelected(children, active)
     setActive(prev => !prev)

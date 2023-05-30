@@ -1,0 +1,37 @@
+.btn {
+  max-width: 316px;
+  background-color: #7dffb1;
+  border-radius: 20px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+
+  font-style: normal;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 31px;
+
+  text-transform: uppercase;
+
+  color: #000000;
+
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  outline: none;
+  border: 1px solid var(--light-green);
+}
+.btn:hover {
+  color: var(--light-green);
+  background-color: transparent;
+}
+.btn:disabled {
+  cursor: auto;
+  opacity: 0.5;
+}
+.btn:disabled:hover {
+  color: #000000;
+  background-color: #7dffb1;
+}
