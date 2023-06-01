@@ -1,0 +1,19 @@
+.contentContainer {
+  margin-top: 100vh;
+  /* transform: translateY(100vh); */
+}
+.secondHalfWrapper {
+  position: absolute;
+  z-index: 9;
+  top: 0;
+}
+.firstHalfWrapper {
+  /* margin-bottom: 100vh; */
+  position: relative;
+  z-index: 10;
+  will-change: transform;
+}
+.noOverflow {
+  height: 100vh !important;
+  overflow-y: hidden;
+}

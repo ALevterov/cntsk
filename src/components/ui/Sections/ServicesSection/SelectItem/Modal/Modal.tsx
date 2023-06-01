@@ -1,4 +1,3 @@
-import styles from './Modal.module.css'
 import useMount from '@/hooks/useMount'
 import ModalLayout from './ModalLayout/ModalLayout'
 import Portal from '@/components/Portal/Portal'

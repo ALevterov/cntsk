@@ -20,47 +20,47 @@ export default function Home() {
   const toggleMenu = useCallback(() => {
     setMenuOpen(prev => !prev)
   }, [])
-  const sectionRef = useRef<HTMLDivElement>(null)
-  const firstHalfRef = useRef<HTMLDivElement>(null)
-  const secondHalfRef = useRef<HTMLDivElement>(null)
-  const allContentRef = useRef<HTMLDivElement>(null)
+  const sectionRef = useRef<HTMLDivElement | null>(null)
+  const firstHalfRef = useRef<HTMLDivElement | null>(null)
+  const secondHalfRef = useRef<HTMLDivElement | null>(null)
+  const allContentRef = useRef<HTMLDivElement | null>(null)
   const scrollPos = useRef<number | null>(null)
   const scrollPosSaved = useRef<number | null>(null)
 
   const closeMenu = useCallback(() => {
     setMenuOpen(false)
   }, [])
-
-  const scrollListener = () => {
+  const scrollListener = useCallback(() => {
+    let additionalScroll = 600
+    let secondHalfDif = 180
+    if (window.innerWidth > 768) {
+      additionalScroll = 600
+      secondHalfDif = 180
+    }
+    if (window.innerWidth <= 768) {
+      additionalScroll = 100
+      secondHalfDif = 110
+    }
     scrollPos.current = window.scrollY
-    if (window.scrollY > window.innerHeight + 200) {
-      sectionRef.current?.classList.remove(styles.fixed)
-      secondHalfRef.current?.classList.remove(styles.outOfView)
-    } else {
-      sectionRef.current?.classList.add(styles.fixed)
-      secondHalfRef.current?.classList.add(styles.outOfView)
-    }
-    let vh = window.innerHeight / 100
-    let dif
-    if (firstHalfRef.current && firstHalfRef.current.clientHeight !== 0) {
-      dif = window.scrollY - firstHalfRef.current.clientHeight
-    }
-    if (secondHalfRef.current && firstHalfRef.current) {
-      if (dif && dif > 0 && dif < 140 * vh) {
-        console.log(
-          'firstHalfRef.current.clientHeight',
-          firstHalfRef.current?.clientHeight
-        )
-        secondHalfRef.current.style.position = `fixed`
-        secondHalfRef.current.style.top = `0`
-        firstHalfRef.current.style.marginBottom = `140vh`
-      } else {
-        secondHalfRef.current.style.position = `static`
-        firstHalfRef.current.style.marginBottom = `0`
+    const vh = window.innerHeight / 100
+    if (sectionRef.current) {
+      if (window.scrollY <= window.innerHeight + additionalScroll) {
+        sectionRef.current.style.marginTop = `${window.scrollY}px`
+        // sectionRef.current.style.transform = `translateY(${window.scrollY}px)`
       }
     }
-  }
-
+    if (firstHalfRef.current && secondHalfRef.current) {
+      const dif = window.scrollY - firstHalfRef.current.clientHeight
+      if (
+        window.scrollY >= firstHalfRef.current.clientHeight &&
+        window.scrollY <= firstHalfRef.current.clientHeight + secondHalfDif * vh
+      ) {
+        firstHalfRef.current.style.transform = `translateY(${-1 * dif})`
+        secondHalfRef.current.style.marginTop = `${window.scrollY}px`
+        // secondHalfRef.current.style.transform = `translateY(${window.scrollY}px)`
+      }
+    }
+  }, [])
   useEffect(() => {
     if (window.innerWidth > 768) {
       return
@@ -81,7 +81,11 @@ export default function Home() {
   }, [menuOpen])
   useEffect(() => {
     window.addEventListener('scroll', scrollListener)
-  }, [])
+    if (secondHalfRef.current && firstHalfRef.current) {
+      secondHalfRef.current.style.marginTop = `calc(${firstHalfRef.current.clientHeight}px + 120vh)`
+      // secondHalfRef.current.style.transform = `translateY(calc(${firstHalfRef.current.clientHeight}px + 120vh))`
+    }
+  }, [scrollListener])
   const menuIconClasses = useMemo(() => {
     const classes = [menuStyles.menuIcon]
     if (menuOpen) {
@@ -97,13 +101,8 @@ export default function Home() {
           <MenuButton />
         </div>
         <div className={styles.firstHalfWrapper} ref={firstHalfRef}>
-          <div className={styles.firstSectionContainer}>
-            <FirstSection />
-          </div>
-          <div
-            className={[styles.contentContainer, styles.fixed].join(' ')}
-            ref={sectionRef}
-          >
+          <FirstSection />
+          <div className={styles.contentContainer} ref={sectionRef}>
             <SecondSection />
             <TodaySection />
             <VideoSection />
@@ -111,10 +110,7 @@ export default function Home() {
             <PossibilitiesSection />
           </div>
         </div>
-        <div
-          className={[styles.secondHalfWrapper, styles.outOfView].join(' ')}
-          ref={secondHalfRef}
-        >
+        <div className={styles.secondHalfWrapper} ref={secondHalfRef}>
           <AboutSection />
           <BrandSection />
           <CasesSection />
