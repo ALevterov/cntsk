@@ -1,6 +1,5 @@
 import global from '@/styles/global.module.css'
 import styles from './SecondSection.module.css'
-// import MainText from '@/components/ui/SecondSection/MainText/MainTextSecond'
 import img1 from '@/assets/secondSection/1.png'
 import img2 from '@/assets/secondSection/2.png'
 import img3 from '@/assets/secondSection/3.png'
@@ -9,8 +8,6 @@ import RunningStringSecond from '@/components/ui/Common/RunningStringSecond/Runn
 import MainText from '@/components/ui/Sections/SecondSection/MainText/MainTextSecond'
 import CardAdvantages from '@/components/ui/Sections/SecondSection/CardAdvantages/CardAdvantages'
 import Header from '@/components/ui/Common/Header/Header'
-// import CardAdvantages from '@/components/ui/SecondSection/CardAdvantages/CardAdvantages'
-// import RunningStringSecond from '@/components/ui/RunningStringSecond/RunningStringSecond'
 
 type TCard = { img: string; text: string }
 
@@ -36,6 +33,13 @@ const cards: TCard[] = [
 const SecondSection = () => {
   return (
     <div className={styles.section} id='second'>
+      <video
+        className={styles.bgVideo}
+        src={require('../../../assets/secondSection/second-background.webm')}
+        autoPlay
+        muted
+        loop
+      />
       <div className={[global.container, styles.container].join(' ')}>
         <div className={styles.vertical}>
           <h1 className={styles.mainText}>ЦНТСК</h1>

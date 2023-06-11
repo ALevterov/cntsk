@@ -2,6 +2,18 @@
   position: relative;
   overflow: hidden;
 }
+.bgVideo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
+  /* height: 100%;
+  width: auto; */
+  height: 100%;
+  width: auto;
+  min-width: 100vw;
+}
 .container {
   z-index: 99;
   position: relative;
@@ -56,6 +68,13 @@
 .contentRight {
   padding: 140px 0;
 }
+.contentRight h1 {
+  position: relative;
+  z-index: 2;
+}
+.vertical {
+  height: 100vh;
+}
 .cardTitle {
   margin-bottom: 26px;
 }
@@ -82,10 +101,10 @@
   align-items: center;
 
   transform: rotate(180deg);
-  top: -6px;
+  bottom: 0;
   left: -240px;
   overflow: hidden;
-  height: 100vh;
+  height: 140vh;
   writing-mode: vertical-lr;
   z-index: 2;
 }
@@ -105,6 +124,7 @@
     font-size: 239.674px;
     left: -88px;
     top: -40px;
+    height: 100vh;
   }
   .cardTitle {
     margin-bottom: 20px;

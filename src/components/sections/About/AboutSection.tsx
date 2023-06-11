@@ -8,6 +8,13 @@ import Header from '@/components/ui/Common/Header/Header'
 const AboutSection = () => {
   return (
     <div className={styles.section} id='aboutus'>
+      <video
+        className={styles.bgVideo}
+        src={require('../../../assets/about-background.webm')}
+        autoPlay
+        muted
+        loop
+      />
       <Header className={styles.mobileHeader} />
       <div className={[global.container].join(' ')}>
         <div className={styles.contentWrapper}>

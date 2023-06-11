@@ -1,6 +1,20 @@
 .section {
   height: 100vh;
   background: linear-gradient(to right, #dddddd, #d6d5d5);
+  position: relative;
+  overflow: hidden;
+}
+.bgVideo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
+  /* height: auto;
+  width: 100%; */
+  height: 100%;
+  width: auto;
+  min-width: 100vw;
 }
 .container {
   height: 100%;
@@ -8,6 +22,7 @@
   align-items: center;
   justify-content: space-between;
   position: relative;
+  z-index: 1;
 }
 
 .cardsContainer {
@@ -31,13 +46,15 @@
   font-weight: 1000;
   font-size: 296.122px;
   line-height: 110%;
-  color: transparent;
+  /* color: #dad9d9; */
+  color: rgb(218, 217, 217, 1);
   background: linear-gradient(to left, #248c4e, #acffe1);
-  color: #dad9d9;
+  /* color: white; */
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-stroke: 4px transparent;
   writing-mode: vertical-rl;
+  mix-blend-mode: multiply;
 
   margin-left: 40px;
   display: flex;
@@ -57,6 +74,10 @@
 }
 
 @media screen and (max-width: 768px) {
+  /* .bgVideo {
+    left: 0;
+    transform: none;
+  } */
   .section {
     padding-top: 60px;
     /* padding-bottom: 40px; */
