@@ -126,13 +126,10 @@
   }
 }
 
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 768px) {
   .container.opened {
     height: 100vh;
   }
-}
-
-@media screen and (max-width: 768px) {
   .container {
     transform: translateY(100vh);
   }
