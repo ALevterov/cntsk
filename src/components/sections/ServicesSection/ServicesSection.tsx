@@ -48,25 +48,13 @@ const ServicesSection = () => {
   }
 
   const onModalClose = () => {
-    let allContentElement = document.getElementById('all-content')
     setModalOpened(false)
-    if (allContentElement) {
-      allContentElement.classList.remove('no-overflow')
-    }
-    setTimeout(() => {
-      if (allContentElement) {
-        let services = document.getElementById('services')
-        services?.scrollIntoView()
-      }
-    }, 100)
+    document.querySelector('html')?.classList.remove('no-overflow')
   }
 
   const onModalOpen = () => {
-    let allContentElement = document.getElementById('all-content')
     setModalOpened(true)
-    if (allContentElement) {
-      allContentElement.classList.add('no-overflow')
-    }
+    document.querySelector('html')?.classList.add('no-overflow')
   }
 
   useEffect(() => {

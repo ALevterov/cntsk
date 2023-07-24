@@ -18,8 +18,14 @@
   padding: 0;
   margin: 0;
 }
-.no-overflow {
-  position: fixed;
+.no-overflow,
+.no-overflow #__next,
+.no-overflow #all-content {
+  overflow: hidden !important;
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+  scrollbar-width: none;
 }
 html,
 body {

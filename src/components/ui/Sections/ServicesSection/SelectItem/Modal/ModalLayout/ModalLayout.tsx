@@ -13,9 +13,7 @@ import SubmitButton from '@/components/ui/Common/SumbitButton/SubmitButton'
 import Header from '@/components/ui/Common/Header/Header'
 
 const overlayAnimations = {
-  enter: styles.overlayEnter,
   enterActive: styles.overlayEnterActive,
-  exit: styles.overlayExit,
   exitActive: styles.overlayExitActive,
 }
 
